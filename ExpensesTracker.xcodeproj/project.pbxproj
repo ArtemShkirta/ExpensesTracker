@@ -12,6 +12,14 @@
 		6E85E4C426E0B6B300AD8BA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E85E4C226E0B6B300AD8BA7 /* LaunchScreen.storyboard */; };
 		6E85E5A326E0CA1000AD8BA7 /* Platform.framework in Platform */ = {isa = PBXBuildFile; fileRef = 6E85E5A126E0C9EF00AD8BA7 /* Platform.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6E85E5A626E0CBAE00AD8BA7 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E5A526E0CBAE00AD8BA7 /* AppCoordinator.swift */; };
+		6E85E5B026E0CFCF00AD8BA7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E5AF26E0CFCF00AD8BA7 /* Coordinator.swift */; };
+		6E85E5B426E0D19E00AD8BA7 /* TransactionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E5B326E0D19E00AD8BA7 /* TransactionCoordinator.swift */; };
+		6E85E5B626E0D2C500AD8BA7 /* ModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E5B526E0D2C500AD8BA7 /* ModuleFactory.swift */; };
+		6E85E5BB26E0D33700AD8BA7 /* Makeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E5BA26E0D33700AD8BA7 /* Makeable.swift */; };
+		6E85E5BF26E0D41300AD8BA7 /* NSObject+AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E5BE26E0D41300AD8BA7 /* NSObject+AssociatedObject.swift */; };
+		6E85E5C126E0D49D00AD8BA7 /* UseCasesConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E5C026E0D49D00AD8BA7 /* UseCasesConsumer.swift */; };
+		6E85E5C326E0D52900AD8BA7 /* TransactionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E5C226E0D52900AD8BA7 /* TransactionFactory.swift */; };
+		6E85E5C626E0D73300AD8BA7 /* TransactionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E5C526E0D73300AD8BA7 /* TransactionListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +54,14 @@
 		6E85E4C526E0B6B300AD8BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E85E59C26E0C9EF00AD8BA7 /* Platform.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Platform.xcodeproj; path = Platform/Platform.xcodeproj; sourceTree = "<group>"; };
 		6E85E5A526E0CBAE00AD8BA7 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		6E85E5AF26E0CFCF00AD8BA7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		6E85E5B326E0D19E00AD8BA7 /* TransactionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCoordinator.swift; sourceTree = "<group>"; };
+		6E85E5B526E0D2C500AD8BA7 /* ModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactory.swift; sourceTree = "<group>"; };
+		6E85E5BA26E0D33700AD8BA7 /* Makeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Makeable.swift; sourceTree = "<group>"; };
+		6E85E5BE26E0D41300AD8BA7 /* NSObject+AssociatedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+AssociatedObject.swift"; sourceTree = "<group>"; };
+		6E85E5C026E0D49D00AD8BA7 /* UseCasesConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesConsumer.swift; sourceTree = "<group>"; };
+		6E85E5C226E0D52900AD8BA7 /* TransactionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFactory.swift; sourceTree = "<group>"; };
+		6E85E5C526E0D73300AD8BA7 /* TransactionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +95,7 @@
 		6E85E4B626E0B6B100AD8BA7 /* ExpensesTracker */ = {
 			isa = PBXGroup;
 			children = (
+				6E85E5AD26E0CF8400AD8BA7 /* Components */,
 				6E85E5A426E0CB2C00AD8BA7 /* Resources */,
 				6E85E4CD26E0C48700AD8BA7 /* Modules */,
 				6E85E4B726E0B6B100AD8BA7 /* AppDelegate.swift */,
@@ -90,6 +107,7 @@
 		6E85E4CD26E0C48700AD8BA7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6E85E5B226E0D17500AD8BA7 /* Transaction */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -110,6 +128,68 @@
 				6E85E4C526E0B6B300AD8BA7 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		6E85E5AD26E0CF8400AD8BA7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E5BC26E0D3A100AD8BA7 /* Extensions */,
+				6E85E5B726E0D30C00AD8BA7 /* Protocols */,
+				6E85E5AE26E0CFC200AD8BA7 /* Base */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		6E85E5AE26E0CFC200AD8BA7 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E5B526E0D2C500AD8BA7 /* ModuleFactory.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		6E85E5B226E0D17500AD8BA7 /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E5C426E0D6EC00AD8BA7 /* TransactionList */,
+				6E85E5B326E0D19E00AD8BA7 /* TransactionCoordinator.swift */,
+				6E85E5C226E0D52900AD8BA7 /* TransactionFactory.swift */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		6E85E5B726E0D30C00AD8BA7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E5AF26E0CFCF00AD8BA7 /* Coordinator.swift */,
+				6E85E5BA26E0D33700AD8BA7 /* Makeable.swift */,
+				6E85E5C026E0D49D00AD8BA7 /* UseCasesConsumer.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		6E85E5BC26E0D3A100AD8BA7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E5BD26E0D3E600AD8BA7 /* ObjectivecRuntime */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6E85E5BD26E0D3E600AD8BA7 /* ObjectivecRuntime */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E5BE26E0D41300AD8BA7 /* NSObject+AssociatedObject.swift */,
+			);
+			path = ObjectivecRuntime;
+			sourceTree = "<group>";
+		};
+		6E85E5C426E0D6EC00AD8BA7 /* TransactionList */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E5C526E0D73300AD8BA7 /* TransactionListVC.swift */,
+			);
+			path = TransactionList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,8 +278,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E85E5B426E0D19E00AD8BA7 /* TransactionCoordinator.swift in Sources */,
+				6E85E5C126E0D49D00AD8BA7 /* UseCasesConsumer.swift in Sources */,
 				6E85E5A626E0CBAE00AD8BA7 /* AppCoordinator.swift in Sources */,
+				6E85E5B626E0D2C500AD8BA7 /* ModuleFactory.swift in Sources */,
+				6E85E5BB26E0D33700AD8BA7 /* Makeable.swift in Sources */,
+				6E85E5C626E0D73300AD8BA7 /* TransactionListVC.swift in Sources */,
+				6E85E5BF26E0D41300AD8BA7 /* NSObject+AssociatedObject.swift in Sources */,
 				6E85E4B826E0B6B100AD8BA7 /* AppDelegate.swift in Sources */,
+				6E85E5C326E0D52900AD8BA7 /* TransactionFactory.swift in Sources */,
+				6E85E5B026E0CFCF00AD8BA7 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
