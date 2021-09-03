@@ -25,6 +25,8 @@
 		6E85E5DE26E10A2900AD8BA7 /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E5DD26E10A2900AD8BA7 /* UIView+Helpers.swift */; };
 		6E85E5E126E26DE300AD8BA7 /* UIEdgeInsets+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E5E026E26DE300AD8BA7 /* UIEdgeInsets+Helpers.swift */; };
 		6E85E5E326E2706700AD8BA7 /* UIView+AddSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E5E226E2706700AD8BA7 /* UIView+AddSubview.swift */; };
+		6E85E5F226E2774C00AD8BA7 /* TransactionSpendingTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E5F126E2774C00AD8BA7 /* TransactionSpendingTVC.swift */; };
+		6E85E5F426E2776D00AD8BA7 /* TransactionIncomeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E5F326E2776D00AD8BA7 /* TransactionIncomeTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		6E85E5DD26E10A2900AD8BA7 /* UIView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
 		6E85E5E026E26DE300AD8BA7 /* UIEdgeInsets+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Helpers.swift"; sourceTree = "<group>"; };
 		6E85E5E226E2706700AD8BA7 /* UIView+AddSubview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AddSubview.swift"; sourceTree = "<group>"; };
+		6E85E5F126E2774C00AD8BA7 /* TransactionSpendingTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSpendingTVC.swift; sourceTree = "<group>"; };
+		6E85E5F326E2776D00AD8BA7 /* TransactionIncomeTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionIncomeTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				6E85E5CB26E0E19200AD8BA7 /* TransactionHeaderView.swift */,
+				6E85E5F126E2774C00AD8BA7 /* TransactionSpendingTVC.swift */,
+				6E85E5F326E2776D00AD8BA7 /* TransactionIncomeTVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -335,6 +341,7 @@
 			files = (
 				6E85E5B426E0D19E00AD8BA7 /* TransactionCoordinator.swift in Sources */,
 				6E85E5C126E0D49D00AD8BA7 /* UseCasesConsumer.swift in Sources */,
+				6E85E5F226E2774C00AD8BA7 /* TransactionSpendingTVC.swift in Sources */,
 				6E85E5A626E0CBAE00AD8BA7 /* AppCoordinator.swift in Sources */,
 				6E85E5B626E0D2C500AD8BA7 /* ModuleFactory.swift in Sources */,
 				6E85E5BB26E0D33700AD8BA7 /* Makeable.swift in Sources */,
@@ -343,6 +350,7 @@
 				6E85E5E326E2706700AD8BA7 /* UIView+AddSubview.swift in Sources */,
 				6E85E4B826E0B6B100AD8BA7 /* AppDelegate.swift in Sources */,
 				6E85E5E126E26DE300AD8BA7 /* UIEdgeInsets+Helpers.swift in Sources */,
+				6E85E5F426E2776D00AD8BA7 /* TransactionIncomeTVC.swift in Sources */,
 				6E85E5DE26E10A2900AD8BA7 /* UIView+Helpers.swift in Sources */,
 				6E85E5DC26E0F21900AD8BA7 /* UILabel+Config.swift in Sources */,
 				6E85E5C326E0D52900AD8BA7 /* TransactionFactory.swift in Sources */,

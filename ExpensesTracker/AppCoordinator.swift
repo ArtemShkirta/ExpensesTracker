@@ -23,7 +23,7 @@ final class AppCoordinator: Coordinator {
     func start(animated: Bool) {
         let presenter = UINavigationController()
         window.rootViewController = presenter
-        
+        TransactionCoordinator(presenter: presenter, useCases: useCases).start(animated: false)
         window.makeKeyAndVisible()
     }
 }

@@ -74,7 +74,24 @@ final class TransactionHeaderView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Actions
+    @objc private func didTapAddTransactionButton(_ button: UIButton) {
+        delegate?.transactionHeaderView(self, didTapAddTransactionButton: button)
+
+    }
+    
+    @objc private func didTapTopUpBalanceButton(_ button: UIButton) {
+        delegate?.transactionHeaderView(self, didTapTopUpBalanceButton: button)
+    }
+    
+    // MARK: - Setup
     private func setupSubviews(exchangeRate: Double, balance: Double) {
+        balanceLabel.text = "\(balance)"
+        exchangeRateLabel.text = "\(exchangeRate)"
+        addSubviews()
+    }
+    
+    private func addSubviews() {
         addSubview(containerView,
                    constraints: [containerView.topAnchor.constraint(equalTo: topAnchor,
                                                                     constant: C.Insets.containerView.top),
@@ -83,7 +100,6 @@ final class TransactionHeaderView: UIView {
                                  containerView.bottomAnchor.constraint(equalTo: bottomAnchor,
                                                                        constant: C.Insets.containerView.bottom)])
         
-        exchangeRateLabel.text = "exchangeRate"
         containerView.addSubview(exchangeRateLabel,
                                  constraints:[exchangeRateLabel.topAnchor.constraint(equalTo: containerView.topAnchor,
                                                                                      constant: C.Insets.exchangeRateLabel.top),
@@ -100,7 +116,6 @@ final class TransactionHeaderView: UIView {
                                  constraints: [balanceLabel.topAnchor.constraint(equalTo: balanceTitleLabel.bottomAnchor,
                                                                                  constant: C.Insets.balanceLabel.top),
                                                balanceLabel.leftAnchor.constraint(equalTo: balanceTitleLabel.leftAnchor)])
-        balanceLabel.text = "\(balance)"
 
         containerView.addSubview(topUpBalanceButton,
                                  constraints: [topUpBalanceButton.heightAnchor.constraint(equalToConstant: C.Size.topUpBalanceButton.height),
@@ -110,7 +125,7 @@ final class TransactionHeaderView: UIView {
                                                topUpBalanceButton.rightAnchor.constraint(equalTo: containerView.rightAnchor,
                                                                                          constant: C.Insets.topUpBalanceButton.right),
                                                topUpBalanceButton.bottomAnchor.constraint(equalTo: balanceLabel.bottomAnchor)])
-
+        
         containerView.addSubview(addTransactionButton,
                                  constraints: [addTransactionButton.topAnchor.constraint(equalTo: balanceLabel.bottomAnchor,
                                                                                          constant: C.Insets.addTransactionButton.top),
@@ -121,16 +136,5 @@ final class TransactionHeaderView: UIView {
                                                addTransactionButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor,
                                                                                             constant: C.Insets.addTransactionButton.bottom),
                                                addTransactionButton.heightAnchor.constraint(equalToConstant: C.Size.addTransactionButton.height)])
-        
-    }
-    
-    // MARK: - Actions
-    @objc private func didTapAddTransactionButton(_ button: UIButton) {
-        delegate?.transactionHeaderView(self, didTapAddTransactionButton: button)
-
-    }
-    
-    @objc private func didTapTopUpBalanceButton(_ button: UIButton) {
-        delegate?.transactionHeaderView(self, didTapTopUpBalanceButton: button)
     }
 }
