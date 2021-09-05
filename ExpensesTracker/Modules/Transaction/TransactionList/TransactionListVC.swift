@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Domain
 
 final class TransactionListVC: UIViewController {
     
@@ -17,6 +18,10 @@ final class TransactionListVC: UIViewController {
         tableView.tableHeaderView?.layoutIfNeeded()
         tableView.tableHeaderView?.sizeToFit()
         tableView.tableHeaderView?.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        tableView.register(TransactionSpendingTVC.self, TransactionIncomeTVC.self)
+        tableView.tableFooterView = UIView()
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.separatorInset = .zero
         return tableView
     }()
     
@@ -40,11 +45,19 @@ extension TransactionListVC: Makeable {
 // MARK: - UITableViewDataSource
 extension TransactionListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        0
+        5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        fatalError()
+        if indexPath.row % 2 == 0 {
+            return tableView.makeCell(TransactionSpendingTVC.self) {
+                $0.config(sort: .electronics, price: Price(value: 12.9, currency: .bitcoin), date: .distantFuture)
+            }
+        } else {
+            return tableView.makeCell(TransactionIncomeTVC.self) {
+                $0.config(price: Price(value: 400, currency: .bitcoin), date: .distantPast)
+            }
+        }
     }
 }
 

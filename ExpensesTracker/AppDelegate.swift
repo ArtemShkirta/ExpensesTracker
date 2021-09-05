@@ -8,13 +8,15 @@
 import UIKit
 import protocol Domain.UseCasesProvider
 import protocol Domain.TransactionUseCase
+import class Platform.Platform
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Properties
     var window: UIWindow?
-    private lazy var appCoordinator = AppCoordinator(useCases: self)
+    private lazy var appCoordinator = AppCoordinator(useCases: platform)
+    private let platform = Platform()
     
     // MARK: - Life Cycle
     func application(_ application: UIApplication,
@@ -22,11 +24,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appCoordinator.start(animated: false)
         window = appCoordinator.window
         return true
-    }
-}
-
-extension AppDelegate: UseCasesProvider, TransactionUseCase {
-    var transaction: TransactionUseCase {
-        self
     }
 }
