@@ -13,6 +13,7 @@ final class TransactionService: TransactionUseCase {
     // MARK: - Properties
     private let database: CDDatabase
     private var observers: [ChangeAction: WeakSet<DataChangeObserver>] = [:]
+    private var currentBalance: Decimal?
     
     // MARK: - Lifecycle
     init(database: CDDatabase) {
@@ -25,11 +26,21 @@ final class TransactionService: TransactionUseCase {
             actionObservers.append(observer)
             observers[action] = actionObservers
         }
-        observers[.updateBalance(newBalance: 0)]?.append(observer)
+    }
+    
+    func removeObserver(_ observer: DataChangeObserver, forActions actions: ChangeAction...) {
+        actions.forEach { action in
+            observers[action].flatMap { $0.remove(observer) }
+        }
     }
     
     func currentBalance(completion: @escaping (Result<Decimal, AppError>) -> Void) {
-        database.find(.sum, of: \CDTransaction.price) { result in
+        if let currentBalance = currentBalance {
+            completion(.success(currentBalance))
+            return
+        }
+        database.find(.sum, of: \CDTransaction.price) { [weak self] result in
+            self?.currentBalance = try? result.get().decimalValue
             completion(result.mapError { _ in AppError.database }.map { $0.decimalValue })
         }
     }
@@ -50,14 +61,23 @@ final class TransactionService: TransactionUseCase {
                                    delegate: delegate))
     }
     
-    func save<T: Transaction & Persistable>(transaction: T, completion: @escaping (Result<T, Error>) -> Void) {
-        database.save(transaction) { result in
+    func save<T: Transaction & Persistable>(transaction: T, completion: @escaping (Result<T, AppError>) -> Void) {
+        database.save(transaction) { [weak self] result in
+            switch result {
+            case .success(let value):
+                let balance = self?.currentBalance ?? 0
+                self?.currentBalance = balance + value.price.value
+                self?.observers[.balanceUpdated]?.forEach { $0.domain(didPerform: .balanceUpdated) }
+                completion(.success(value))
+            case .failure:
+                completion(.failure(.database))
+            }
             completion(result.mapError { _ in AppError.database })
         }
     }
     
     // MARK: - Hepler Methods
-    private func makeTransactionFetchRequest(fetchBatchSize: Int = 5) -> NSFetchRequest<CDTransaction> {
+    private func makeTransactionFetchRequest(fetchBatchSize: Int = 20) -> NSFetchRequest<CDTransaction> {
         let fetchRequest: NSFetchRequest<CDTransaction> = CDTransaction.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \CDTransaction.createDate, ascending: false)]
         fetchRequest.fetchBatchSize = fetchBatchSize

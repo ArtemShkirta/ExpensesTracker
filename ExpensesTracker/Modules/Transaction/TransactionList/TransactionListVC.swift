@@ -57,14 +57,26 @@ final class TransactionListVC: UIViewController, UseCasesConsumer {
         setupView()
     }
     
+    deinit {
+        useCases.transaction.removeObserver(self, forActions: .balanceUpdated)
+    }
+    
     // MARK: - Setup
     private func setupView() {
+        useCases.transaction.addObserver(self, forActions: .balanceUpdated)
+        performFetch()
+        checkCurrentBalance()
+    }
+    
+    private func performFetch() {
         do {
             try dataSource.performFetch()
         } catch {
             handleError(error)
         }
-        
+    }
+    
+    private func checkCurrentBalance() {
         useCases.transaction.currentBalance { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
@@ -193,6 +205,15 @@ extension TransactionListVC: TransactionHeaderViewDelegate {
     }
 }
 
+// MARK: - DataChangeObserver
+extension TransactionListVC: DataChangeObserver {
+    func domain(didPerform action: ChangeAction) {
+        switch action {
+        case .balanceUpdated:
+            checkCurrentBalance()
+        }
+    }
+}
 
 extension UITableView {
     func setAndLayoutTableHeaderView(header: UIView) {

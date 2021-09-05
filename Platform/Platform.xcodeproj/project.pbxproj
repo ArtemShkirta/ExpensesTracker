@@ -25,6 +25,9 @@
 		6E85E68126E5008500AD8BA7 /* NSManagedObjectContext+Find.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E68026E5008500AD8BA7 /* NSManagedObjectContext+Find.swift */; };
 		6E85E68526E5010500AD8BA7 /* Optional+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E68426E5010500AD8BA7 /* Optional+Helpers.swift */; };
 		6E85E68E26E50B9600AD8BA7 /* WeakSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E68D26E50B9600AD8BA7 /* WeakSet.swift */; };
+		6E85E69026E5579100AD8BA7 /* BitcoinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E68F26E5579100AD8BA7 /* BitcoinService.swift */; };
+		6E85E69326E557CE00AD8BA7 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E69226E557CE00AD8BA7 /* Environment.swift */; };
+		6E85E69626E5585900AD8BA7 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E69526E5585900AD8BA7 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,9 @@
 		6E85E68026E5008500AD8BA7 /* NSManagedObjectContext+Find.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Find.swift"; sourceTree = "<group>"; };
 		6E85E68426E5010500AD8BA7 /* Optional+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Helpers.swift"; sourceTree = "<group>"; };
 		6E85E68D26E50B9600AD8BA7 /* WeakSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakSet.swift; sourceTree = "<group>"; };
+		6E85E68F26E5579100AD8BA7 /* BitcoinService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinService.swift; sourceTree = "<group>"; };
+		6E85E69226E557CE00AD8BA7 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		6E85E69526E5585900AD8BA7 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +111,8 @@
 		6E85E58B26E0C93A00AD8BA7 /* Platform */ = {
 			isa = PBXGroup;
 			children = (
-				6E85E68A26E50B7300AD8BA7 /* Components */,
 				6E85E63C26E40F9C00AD8BA7 /* Platform.swift */,
+				6E85E68A26E50B7300AD8BA7 /* Components */,
 				6E85E63626E400D100AD8BA7 /* Services */,
 				6E85E60F26E289D600AD8BA7 /* Entities */,
 				6E85E58C26E0C93B00AD8BA7 /* Platform.h */,
@@ -128,7 +134,6 @@
 			children = (
 				6E85E62F26E3FEA300AD8BA7 /* CDDataSource.swift */,
 				6E85E61A26E3ADA600AD8BA7 /* CDDatabase.swift */,
-				6E85E62426E3B76D00AD8BA7 /* DatabaseError.swift */,
 				6E85E60826E280D100AD8BA7 /* Model.xcdatamodeld */,
 			);
 			path = Database;
@@ -137,6 +142,7 @@
 		6E85E60F26E289D600AD8BA7 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				6E85E69426E5584A00AD8BA7 /* Error */,
 				6E85E61526E28A5700AD8BA7 /* Expenses */,
 				6E85E61026E28A4C00AD8BA7 /* Transaction */,
 			);
@@ -192,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				6E85E63E26E4100200AD8BA7 /* TransactionService.swift */,
+				6E85E68F26E5579100AD8BA7 /* BitcoinService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -239,6 +246,7 @@
 		6E85E68A26E50B7300AD8BA7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				6E85E69126E557BC00AD8BA7 /* Environment */,
 				6E85E68B26E50B8500AD8BA7 /* Utils */,
 				6E85E60626E280B200AD8BA7 /* Database */,
 				6E85E62626E3BA9F00AD8BA7 /* Extensions */,
@@ -261,6 +269,23 @@
 				6E85E68D26E50B9600AD8BA7 /* WeakSet.swift */,
 			);
 			path = Collections;
+			sourceTree = "<group>";
+		};
+		6E85E69126E557BC00AD8BA7 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E69226E557CE00AD8BA7 /* Environment.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		6E85E69426E5584A00AD8BA7 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E62426E3B76D00AD8BA7 /* DatabaseError.swift */,
+				6E85E69526E5585900AD8BA7 /* NetworkError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +385,7 @@
 			files = (
 				6E85E68526E5010500AD8BA7 /* Optional+Helpers.swift in Sources */,
 				6E85E62A26E3BAC100AD8BA7 /* NSManagedObjectContext+Save.swift in Sources */,
+				6E85E69026E5579100AD8BA7 /* BitcoinService.swift in Sources */,
 				6E85E60A26E280D100AD8BA7 /* Model.xcdatamodeld in Sources */,
 				6E85E61926E28A8700AD8BA7 /* CDExpenses+CoreDataClass.swift in Sources */,
 				6E85E61426E28A4C00AD8BA7 /* CDTransaction+CoreDataProperties.swift in Sources */,
@@ -370,10 +396,12 @@
 				6E85E68126E5008500AD8BA7 /* NSManagedObjectContext+Find.swift in Sources */,
 				6E85E62526E3B76D00AD8BA7 /* DatabaseError.swift in Sources */,
 				6E85E61826E28A8700AD8BA7 /* CDExpenses+CoreDataProperties.swift in Sources */,
+				6E85E69326E557CE00AD8BA7 /* Environment.swift in Sources */,
 				6E85E68E26E50B9600AD8BA7 /* WeakSet.swift in Sources */,
 				6E85E61B26E3ADA600AD8BA7 /* CDDatabase.swift in Sources */,
 				6E85E67C26E4E9A900AD8BA7 /* DateFormatter+Helpers.swift in Sources */,
 				6E85E63F26E4100200AD8BA7 /* TransactionService.swift in Sources */,
+				6E85E69626E5585900AD8BA7 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
