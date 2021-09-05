@@ -125,3 +125,24 @@ public extension CDDatabase {
         })
     }
 }
+
+// MARK: - Find
+public extension CDDatabase {
+    func find<Root: NSManagedObject, Value: AttributeTypeConvertible>(_ function: NSManagedObjectContext.Function,
+                                                                      of keyPath: KeyPath<Root, Value>,
+                                                                      in context: Context = .background,
+                                                                      completion: @escaping (Result<Value, DatabaseError>) -> Void) {
+        perform(in: context, action: { context in
+            try context.find(function, of: keyPath)
+        }, completion: completion)
+    }
+    
+    func find<Root: NSManagedObject, Value: AttributeTypeConvertible>(_ function: NSManagedObjectContext.Function,
+                                                                      of keyPath: KeyPath<Root, Value?>,
+                                                                      in context: Context = .background,
+                                                                      completion: @escaping (Result<Value, DatabaseError>) -> Void) {
+        perform(in: context, action: { context in
+            try context.find(function, of: keyPath)
+        }, completion: completion)
+    }
+}

@@ -21,6 +21,10 @@
 		6E85E63D26E40F9C00AD8BA7 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E63C26E40F9C00AD8BA7 /* Platform.swift */; };
 		6E85E63F26E4100200AD8BA7 /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E63E26E4100200AD8BA7 /* TransactionService.swift */; };
 		6E85E67C26E4E9A900AD8BA7 /* DateFormatter+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E67B26E4E9A900AD8BA7 /* DateFormatter+Helpers.swift */; };
+		6E85E67F26E5004200AD8BA7 /* AttributeTypeConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E67E26E5004200AD8BA7 /* AttributeTypeConvertible.swift */; };
+		6E85E68126E5008500AD8BA7 /* NSManagedObjectContext+Find.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E68026E5008500AD8BA7 /* NSManagedObjectContext+Find.swift */; };
+		6E85E68526E5010500AD8BA7 /* Optional+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E68426E5010500AD8BA7 /* Optional+Helpers.swift */; };
+		6E85E68E26E50B9600AD8BA7 /* WeakSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E68D26E50B9600AD8BA7 /* WeakSet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,10 @@
 		6E85E63C26E40F9C00AD8BA7 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		6E85E63E26E4100200AD8BA7 /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
 		6E85E67B26E4E9A900AD8BA7 /* DateFormatter+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Helpers.swift"; sourceTree = "<group>"; };
+		6E85E67E26E5004200AD8BA7 /* AttributeTypeConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeTypeConvertible.swift; sourceTree = "<group>"; };
+		6E85E68026E5008500AD8BA7 /* NSManagedObjectContext+Find.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Find.swift"; sourceTree = "<group>"; };
+		6E85E68426E5010500AD8BA7 /* Optional+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Helpers.swift"; sourceTree = "<group>"; };
+		6E85E68D26E50B9600AD8BA7 /* WeakSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakSet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +105,10 @@
 		6E85E58B26E0C93A00AD8BA7 /* Platform */ = {
 			isa = PBXGroup;
 			children = (
+				6E85E68A26E50B7300AD8BA7 /* Components */,
 				6E85E63C26E40F9C00AD8BA7 /* Platform.swift */,
 				6E85E63626E400D100AD8BA7 /* Services */,
-				6E85E62626E3BA9F00AD8BA7 /* Extensions */,
 				6E85E60F26E289D600AD8BA7 /* Entities */,
-				6E85E60626E280B200AD8BA7 /* Database */,
 				6E85E58C26E0C93B00AD8BA7 /* Platform.h */,
 				6E85E58D26E0C93B00AD8BA7 /* Info.plist */,
 			);
@@ -157,6 +164,7 @@
 		6E85E62626E3BA9F00AD8BA7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				6E85E68226E500F300AD8BA7 /* SwiftStandardLibrary */,
 				6E85E67926E4E98E00AD8BA7 /* Foundation */,
 				6E85E62726E3BAA900AD8BA7 /* CoreData */,
 			);
@@ -175,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				6E85E62926E3BAC100AD8BA7 /* NSManagedObjectContext+Save.swift */,
+				6E85E68026E5008500AD8BA7 /* NSManagedObjectContext+Find.swift */,
 			);
 			path = NSManagedObjectContext;
 			sourceTree = "<group>";
@@ -201,6 +210,57 @@
 				6E85E67B26E4E9A900AD8BA7 /* DateFormatter+Helpers.swift */,
 			);
 			path = DateFormatter;
+			sourceTree = "<group>";
+		};
+		6E85E67D26E5003500AD8BA7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E67E26E5004200AD8BA7 /* AttributeTypeConvertible.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		6E85E68226E500F300AD8BA7 /* SwiftStandardLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E68326E500F700AD8BA7 /* Optional */,
+			);
+			path = SwiftStandardLibrary;
+			sourceTree = "<group>";
+		};
+		6E85E68326E500F700AD8BA7 /* Optional */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E68426E5010500AD8BA7 /* Optional+Helpers.swift */,
+			);
+			path = Optional;
+			sourceTree = "<group>";
+		};
+		6E85E68A26E50B7300AD8BA7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E68B26E50B8500AD8BA7 /* Utils */,
+				6E85E60626E280B200AD8BA7 /* Database */,
+				6E85E62626E3BA9F00AD8BA7 /* Extensions */,
+				6E85E67D26E5003500AD8BA7 /* Protocols */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		6E85E68B26E50B8500AD8BA7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E68C26E50B8A00AD8BA7 /* Collections */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		6E85E68C26E50B8A00AD8BA7 /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E68D26E50B9600AD8BA7 /* WeakSet.swift */,
+			);
+			path = Collections;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,15 +358,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E85E68526E5010500AD8BA7 /* Optional+Helpers.swift in Sources */,
 				6E85E62A26E3BAC100AD8BA7 /* NSManagedObjectContext+Save.swift in Sources */,
 				6E85E60A26E280D100AD8BA7 /* Model.xcdatamodeld in Sources */,
 				6E85E61926E28A8700AD8BA7 /* CDExpenses+CoreDataClass.swift in Sources */,
 				6E85E61426E28A4C00AD8BA7 /* CDTransaction+CoreDataProperties.swift in Sources */,
 				6E85E61326E28A4C00AD8BA7 /* CDTransaction+CoreDataClass.swift in Sources */,
 				6E85E63D26E40F9C00AD8BA7 /* Platform.swift in Sources */,
+				6E85E67F26E5004200AD8BA7 /* AttributeTypeConvertible.swift in Sources */,
 				6E85E63026E3FEA300AD8BA7 /* CDDataSource.swift in Sources */,
+				6E85E68126E5008500AD8BA7 /* NSManagedObjectContext+Find.swift in Sources */,
 				6E85E62526E3B76D00AD8BA7 /* DatabaseError.swift in Sources */,
 				6E85E61826E28A8700AD8BA7 /* CDExpenses+CoreDataProperties.swift in Sources */,
+				6E85E68E26E50B9600AD8BA7 /* WeakSet.swift in Sources */,
 				6E85E61B26E3ADA600AD8BA7 /* CDDatabase.swift in Sources */,
 				6E85E67C26E4E9A900AD8BA7 /* DateFormatter+Helpers.swift in Sources */,
 				6E85E63F26E4100200AD8BA7 /* TransactionService.swift in Sources */,

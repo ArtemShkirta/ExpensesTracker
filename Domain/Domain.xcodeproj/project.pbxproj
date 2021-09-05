@@ -22,6 +22,8 @@
 		6E85E65E26E4C66B00AD8BA7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E85E65D26E4C66B00AD8BA7 /* Localizable.strings */; };
 		6E85E66326E4C9B300AD8BA7 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E66226E4C9B300AD8BA7 /* Localized.swift */; };
 		6E85E67726E4E1BC00AD8BA7 /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E67626E4E1BC00AD8BA7 /* Persistable.swift */; };
+		6E85E68726E5038D00AD8BA7 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E68626E5038D00AD8BA7 /* AppError.swift */; };
+		6E85E68926E50A5D00AD8BA7 /* DataChangeObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E68826E50A5D00AD8BA7 /* DataChangeObserver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		6E85E65D26E4C66B00AD8BA7 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		6E85E66226E4C9B300AD8BA7 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		6E85E67626E4E1BC00AD8BA7 /* Persistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
+		6E85E68626E5038D00AD8BA7 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		6E85E68826E50A5D00AD8BA7 /* DataChangeObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataChangeObserver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 				6E85E5FC26E2792C00AD8BA7 /* Transaction.swift */,
 				6E85E60B26E2832300AD8BA7 /* Expenses.swift */,
 				6E85E60D26E2887200AD8BA7 /* Income.swift */,
+				6E85E68626E5038D00AD8BA7 /* AppError.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 				6E85E63926E40BF300AD8BA7 /* DataSource */,
 				6E85E63226E3FF4D00AD8BA7 /* DatabaseRepresentable.swift */,
 				6E85E67626E4E1BC00AD8BA7 /* Persistable.swift */,
+				6E85E68826E50A5D00AD8BA7 /* DataChangeObserver.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -252,10 +258,12 @@
 				6E85E5A926E0CEA800AD8BA7 /* UseCasesProvider.swift in Sources */,
 				6E85E60E26E2887200AD8BA7 /* Income.swift in Sources */,
 				6E85E63426E3FF4D00AD8BA7 /* DatabaseRepresentable.swift in Sources */,
+				6E85E68726E5038D00AD8BA7 /* AppError.swift in Sources */,
 				6E85E5FD26E2792C00AD8BA7 /* Transaction.swift in Sources */,
 				6E85E5FF26E27A5600AD8BA7 /* Price.swift in Sources */,
 				6E85E5AB26E0CF0400AD8BA7 /* TransactionUseCase.swift in Sources */,
 				6E85E60326E27ACC00AD8BA7 /* NumberFormatter+Extension.swift in Sources */,
+				6E85E68926E50A5D00AD8BA7 /* DataChangeObserver.swift in Sources */,
 				6E85E63526E3FF4D00AD8BA7 /* DataSource.swift in Sources */,
 				6E85E60C26E2832300AD8BA7 /* Expenses.swift in Sources */,
 				6E85E63B26E40C0100AD8BA7 /* AnyDataSource.swift in Sources */,

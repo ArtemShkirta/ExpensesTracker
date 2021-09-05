@@ -25,17 +25,14 @@ final class TransactionListVC: UIViewController, UseCasesConsumer {
         let tableView = UITableView(frame: UIScreen.main.bounds, style: .grouped)
         tableView.dataSource = self
         tableView.setAndLayoutTableHeaderView(header: headerView)
-//        tableView.tableHeaderView = headerView
-        tableView.tableHeaderView?.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         tableView.register(TransactionSpendingTVC.self, TransactionIncomeTVC.self)
         tableView.tableFooterView = UIView()
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.separatorInset = .zero
         return tableView
     }()
     
     private lazy var headerView: TransactionHeaderView = {
-        let headerView = TransactionHeaderView(exchangeRate: 35.6, balance: 12121323.0, delegate: self, frame: UIScreen.main.bounds)
+        let headerView = TransactionHeaderView(delegate: self, frame: UIScreen.main.bounds)
         return headerView
     }()
     
@@ -51,14 +48,38 @@ final class TransactionListVC: UIViewController, UseCasesConsumer {
     // MARK: - Life Cycle
     override func loadView() {
         view = tableView
-        try? dataSource.performFetch()
     }
     
-    // MARK: - Helper Methods
-//    private func showTopUpBalanceAction() {
-//
-//    }
-//
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupView()
+    }
+    
+    // MARK: - Setup
+    private func setupView() {
+        do {
+            try dataSource.performFetch()
+        } catch {
+            handleError(error)
+        }
+        
+        useCases.transaction.currentBalance { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let newBalance):
+                    self?.headerView.updateBalance(newBalance)
+                case .failure(let error):
+                    self?.handleError(error)
+                }
+            }
+        }
+    }
+    
+    private func handleError(_ error: Error) {
+        
+    }
 }
 
 // MARK: - Makeable

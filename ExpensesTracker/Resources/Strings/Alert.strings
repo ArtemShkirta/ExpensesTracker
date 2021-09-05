@@ -12,3 +12,8 @@
 "action.no" = "No";
 "action.yes" = "Yes";
 "action.cancel" = "Cancel";
+
+// MARK: - TopUpBalance
+"topUpBalance.title" = "Top up balance";
+"topUpBalance.message" = "Input amount of bitcoins to top up";
+"topUpBalance.placeholder" = "Amount of bitcoins";

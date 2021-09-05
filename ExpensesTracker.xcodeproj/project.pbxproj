@@ -21,7 +21,6 @@
 		6E85E5C326E0D52900AD8BA7 /* TransactionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E5C226E0D52900AD8BA7 /* TransactionFactory.swift */; };
 		6E85E5C626E0D73300AD8BA7 /* TransactionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E5C526E0D73300AD8BA7 /* TransactionListVC.swift */; };
 		6E85E5CC26E0E19200AD8BA7 /* TransactionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E5CB26E0E19200AD8BA7 /* TransactionHeaderView.swift */; };
-		6E85E5DC26E0F21900AD8BA7 /* UILabel+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E5DB26E0F21900AD8BA7 /* UILabel+Config.swift */; };
 		6E85E5DE26E10A2900AD8BA7 /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E5DD26E10A2900AD8BA7 /* UIView+Helpers.swift */; };
 		6E85E5E126E26DE300AD8BA7 /* UIEdgeInsets+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E5E026E26DE300AD8BA7 /* UIEdgeInsets+Helpers.swift */; };
 		6E85E5E326E2706700AD8BA7 /* UIView+AddSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E5E226E2706700AD8BA7 /* UIView+AddSubview.swift */; };
@@ -77,7 +76,6 @@
 		6E85E5C226E0D52900AD8BA7 /* TransactionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFactory.swift; sourceTree = "<group>"; };
 		6E85E5C526E0D73300AD8BA7 /* TransactionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListVC.swift; sourceTree = "<group>"; };
 		6E85E5CB26E0E19200AD8BA7 /* TransactionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHeaderView.swift; sourceTree = "<group>"; };
-		6E85E5DB26E0F21900AD8BA7 /* UILabel+Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Config.swift"; sourceTree = "<group>"; };
 		6E85E5DD26E10A2900AD8BA7 /* UIView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
 		6E85E5E026E26DE300AD8BA7 /* UIEdgeInsets+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Helpers.swift"; sourceTree = "<group>"; };
 		6E85E5E226E2706700AD8BA7 /* UIView+AddSubview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AddSubview.swift"; sourceTree = "<group>"; };
@@ -241,7 +239,6 @@
 				6E85E67126E4D6B200AD8BA7 /* UIAlert */,
 				6E85E66426E4CA5200AD8BA7 /* UITableView */,
 				6E85E5DF26E26DCD00AD8BA7 /* UIEdgeInsets */,
-				6E85E5DA26E0F20D00AD8BA7 /* UILabel */,
 				6E85E5D726E0EFC200AD8BA7 /* UIView */,
 			);
 			path = UIKit;
@@ -254,14 +251,6 @@
 				6E85E5DD26E10A2900AD8BA7 /* UIView+Helpers.swift */,
 			);
 			path = UIView;
-			sourceTree = "<group>";
-		};
-		6E85E5DA26E0F20D00AD8BA7 /* UILabel */ = {
-			isa = PBXGroup;
-			children = (
-				6E85E5DB26E0F21900AD8BA7 /* UILabel+Config.swift */,
-			);
-			path = UILabel;
 			sourceTree = "<group>";
 		};
 		6E85E5DF26E26DCD00AD8BA7 /* UIEdgeInsets */ = {
@@ -435,7 +424,6 @@
 				6E85E5E126E26DE300AD8BA7 /* UIEdgeInsets+Helpers.swift in Sources */,
 				6E85E5F426E2776D00AD8BA7 /* TransactionIncomeTVC.swift in Sources */,
 				6E85E5DE26E10A2900AD8BA7 /* UIView+Helpers.swift in Sources */,
-				6E85E5DC26E0F21900AD8BA7 /* UILabel+Config.swift in Sources */,
 				6E85E65326E4BB0900AD8BA7 /* DateFormatter+Extension.swift in Sources */,
 				6E85E5C326E0D52900AD8BA7 /* TransactionFactory.swift in Sources */,
 				6E85E5B026E0CFCF00AD8BA7 /* Coordinator.swift in Sources */,

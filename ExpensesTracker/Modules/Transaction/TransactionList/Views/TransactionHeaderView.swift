@@ -18,7 +18,7 @@ final class TransactionHeaderView: UIView {
         enum Insets {
             static var containerView: UIEdgeInsets { UIEdgeInsets(top: 16, bottom: -16) }
             static var exchangeRateLabel: UIEdgeInsets { UIEdgeInsets(top: 16, trailing: -16) }
-            static var balanceTitleLabel: UIEdgeInsets { UIEdgeInsets(top: 60, leading: 16) }
+            static var balanceTitleLabel: UIEdgeInsets { UIEdgeInsets(top: 32, leading: 16) }
             static var balanceLabel: UIEdgeInsets { UIEdgeInsets(top: 8) }
             static var topUpBalanceButton: UIEdgeInsets { UIEdgeInsets(leading: 16, trailing: -16) }
             static var addTransactionButton: UIEdgeInsets{ UIEdgeInsets(top: 16, leading: 16, bottom: -16, trailing: -16) }
@@ -32,9 +32,30 @@ final class TransactionHeaderView: UIView {
     
     // MARK: - Properties
     private weak var delegate: TransactionHeaderViewDelegate?
-    private let exchangeRateLabel = UILabel(config: .parameter(.darkText))
-    private let balanceTitleLabel = UILabel(config: .title(Localized("transactionList.header.label.balance")))
-    private let balanceLabel = UILabel(config: .parameter(.systemGreen))
+    
+    private let exchangeRateLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 30)
+        label.textColor = .darkText
+        label.text = Decimal().description
+        return label
+    }()
+    
+    private let balanceTitleLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 20, weight: .semibold)
+        label.textColor = .systemGray
+        label.text = Localized("transactionList.header.label.balance")
+        return label
+    }()
+    
+    private let balanceLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 30)
+        label.textColor = .systemGreen
+        label.text = Decimal().description
+        return label
+    }()
     
     private lazy var addTransactionButton: UIButton = {
         let button = UIButton(frame: CGRect(origin: .zero, size: C.Size.addTransactionButton))
@@ -63,15 +84,19 @@ final class TransactionHeaderView: UIView {
     
     
     // MARK: - Life Cycle
-    init(exchangeRate: Double, balance: Double, delegate: TransactionHeaderViewDelegate, frame: CGRect) {
+    init(delegate: TransactionHeaderViewDelegate, frame: CGRect) {
         self.delegate = delegate
         super.init(frame: frame)
-        setupSubviews(exchangeRate: exchangeRate, balance: balance)
+        addSubviews()
     }
     
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func updateBalance(_ newBalance: Decimal) {
+        balanceLabel.text = newBalance.description
     }
     
     // MARK: - Actions
