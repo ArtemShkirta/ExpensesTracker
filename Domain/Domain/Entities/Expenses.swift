@@ -9,6 +9,23 @@ public final class Expenses: Transaction {
     
     public enum Sort: Int16 {
         case groceries, taxi, electronics, restaurant, other
+        
+        public var name: String {
+            let name: String
+            switch self {
+            case .groceries:
+                name = Localized("expenses.sort.groceries")
+            case .taxi:
+                name = Localized("expenses.sort.taxi")
+            case .electronics:
+                name = Localized("expenses.sort.electronics")
+            case .restaurant:
+                name = Localized("expenses.sort.restaurant")
+            case .other:
+                name = Localized("expenses.sort.other")
+            }
+            return name
+        }
     }
     
     // MARK: - Properties

@@ -16,11 +16,11 @@ public enum Currency: Int16, CaseIterable {
         let isoCode: String
         switch self {
         case .bitcoin:
-            isoCode = "XBT"
+            isoCode = Localized("currency.bitcoin")
         case .usd:
-            isoCode = "USD"
+            isoCode = Localized("currency.usd")
         case .unknown:
-            isoCode = "N/A"
+            isoCode = Localized("currency.unknown")
         }
         return isoCode
     }

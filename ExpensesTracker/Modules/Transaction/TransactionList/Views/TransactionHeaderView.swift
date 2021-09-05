@@ -33,13 +33,13 @@ final class TransactionHeaderView: UIView {
     // MARK: - Properties
     private weak var delegate: TransactionHeaderViewDelegate?
     private let exchangeRateLabel = UILabel(config: .parameter(.darkText))
-    private let balanceTitleLabel = UILabel(config: .title("Balance:"))
+    private let balanceTitleLabel = UILabel(config: .title(Localized("transactionList.header.label.balance")))
     private let balanceLabel = UILabel(config: .parameter(.systemGreen))
     
     private lazy var addTransactionButton: UIButton = {
         let button = UIButton(frame: CGRect(origin: .zero, size: C.Size.addTransactionButton))
         button.addTarget(self, action: #selector(didTapAddTransactionButton), for: .touchUpInside)
-        button.setTitle("Add transaction", for: .normal)
+        button.setTitle(Localized("transactionList.header.button.addTransaction"), for: .normal)
         button.backgroundColor = .systemBlue
         button.cornerRadius = 16
         return button

@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  Domain
+
+  Created by Artem Shkirta on 05.09.2021.
+  
+*/
+
+// MARK: - Expenses
+"expenses.sort.groceries" = "Groceries";
+"expenses.sort.taxi" = "Taxi";
+"expenses.sort.electronics" = "Electronics";
+"expenses.sort.restaurant" = "Restaurant";
+"expenses.sort.other" = "Other";
+
+// MARK: - Currency
+"currency.unknown" = "N/A";
+"currency.bitcoin" = "XBT";
+"currency.usd" = "USD";

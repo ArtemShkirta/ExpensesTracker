@@ -16,7 +16,7 @@ public final class Platform: UseCasesProvider {
     private let database: CDDatabase
     
     // MARK: - Life Cycle
-    init() {
+    public init() {
         database = CDDatabase()
         transaction = TransactionService(database: database)
     }
