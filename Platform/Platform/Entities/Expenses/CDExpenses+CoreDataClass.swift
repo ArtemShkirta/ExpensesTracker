@@ -23,6 +23,7 @@ extension Expenses: Persistable {
         object.price = NSDecimalNumber(decimal: price.value)
         object.currency = price.currency.rawValue
         object.kind = Transaction.Kind.expenses.rawValue
+        object.normalizedCreateDate = DateFormatter.transaction.string(from: createDate)
     }
 }
 

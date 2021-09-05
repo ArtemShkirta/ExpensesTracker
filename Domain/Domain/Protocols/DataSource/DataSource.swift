@@ -13,5 +13,5 @@ public protocol DataSource {
     func numberOfRows(inSection section: Int) -> Int
     func performFetch() throws
     func object(at indexPath: IndexPath) throws -> Object
-    func sectionName(ofSection section: Int) -> String?
+    func sectionTitle(for section: Int) -> String?
 }

@@ -21,6 +21,7 @@
 		6E85E63B26E40C0100AD8BA7 /* AnyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E63A26E40C0100AD8BA7 /* AnyDataSource.swift */; };
 		6E85E65E26E4C66B00AD8BA7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E85E65D26E4C66B00AD8BA7 /* Localizable.strings */; };
 		6E85E66326E4C9B300AD8BA7 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E66226E4C9B300AD8BA7 /* Localized.swift */; };
+		6E85E67726E4E1BC00AD8BA7 /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E67626E4E1BC00AD8BA7 /* Persistable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		6E85E63A26E40C0100AD8BA7 /* AnyDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDataSource.swift; sourceTree = "<group>"; };
 		6E85E65D26E4C66B00AD8BA7 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		6E85E66226E4C9B300AD8BA7 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
+		6E85E67626E4E1BC00AD8BA7 /* Persistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,11 +74,11 @@
 		6E85E57626E0C91500AD8BA7 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				6E85E5A726E0CE8A00AD8BA7 /* UseCases */,
 				6E85E65A26E4C63B00AD8BA7 /* Resources */,
 				6E85E63126E3FEF000AD8BA7 /* Protocols */,
 				6E85E60026E27AB600AD8BA7 /* Extensions */,
 				6E85E5F826E2788D00AD8BA7 /* Entities */,
-				6E85E5A726E0CE8A00AD8BA7 /* UseCases */,
 				6E85E57726E0C91500AD8BA7 /* Domain.h */,
 				6E85E57826E0C91500AD8BA7 /* Info.plist */,
 			);
@@ -141,6 +143,7 @@
 			children = (
 				6E85E63926E40BF300AD8BA7 /* DataSource */,
 				6E85E63226E3FF4D00AD8BA7 /* DatabaseRepresentable.swift */,
+				6E85E67626E4E1BC00AD8BA7 /* Persistable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E85E67726E4E1BC00AD8BA7 /* Persistable.swift in Sources */,
 				6E85E5FB26E278B800AD8BA7 /* Currency.swift in Sources */,
 				6E85E66326E4C9B300AD8BA7 /* Localized.swift in Sources */,
 				6E85E5A926E0CEA800AD8BA7 /* UseCasesProvider.swift in Sources */,

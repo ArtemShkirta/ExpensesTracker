@@ -50,7 +50,7 @@ extension CDDataSource: DataSource {
         try mapper(fetchedResultsController.object(at: indexPath))
     }
     
-    func sectionName(ofSection section: Int) -> String? {
+    func sectionTitle(for section: Int) -> String? {
         fetchedResultsController.sections?[section].name
     }
 }

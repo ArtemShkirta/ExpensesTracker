@@ -10,3 +10,7 @@ import func Foundation.NSLocalizedString
 func Localized(_ key: String) -> String {
     NSLocalizedString(key, comment: "")
 }
+
+func LocalizedAlert(_ key: String) -> String {
+    NSLocalizedString(key, tableName: "Alert", comment: "")
+}

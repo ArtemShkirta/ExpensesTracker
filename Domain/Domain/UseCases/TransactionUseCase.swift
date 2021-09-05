@@ -9,4 +9,5 @@ import protocol CoreData.NSFetchedResultsControllerDelegate
 
 public protocol TransactionUseCase {
     func makeDataSource(delegate: NSFetchedResultsControllerDelegate) -> AnyDataSource<Transaction>
+    func save<T: Transaction & Persistable>(transaction: T, completion: @escaping (Result<Transaction, Error>) -> Void)
 }

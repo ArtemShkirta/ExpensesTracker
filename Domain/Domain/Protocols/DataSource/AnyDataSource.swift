@@ -20,7 +20,7 @@ public struct AnyDataSource<Object> {
         numberOfSectionsClosure = { dataSource.numberOfSections }
         numberOfRowsInSectionClosure = dataSource.numberOfRows(inSection:)
         performFetchClosure = dataSource.performFetch
-        sectionNameOfSectionClosure = dataSource.sectionName(ofSection:)
+        sectionNameOfSectionClosure = dataSource.sectionTitle(for:)
     }
 }
 
@@ -42,7 +42,7 @@ extension AnyDataSource: DataSource {
         try objectAtIndexClosure(indexPath)
     }
     
-    public func sectionName(ofSection section: Int) -> String? {
+    public func sectionTitle(for section: Int) -> String? {
         sectionNameOfSectionClosure(section)
     }
 }

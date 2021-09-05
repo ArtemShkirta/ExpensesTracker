@@ -1,8 +1,8 @@
 //
 //  Persistable.swift
-//  Platform
+//  Domain
 //
-//  Created by Artem Shkirta on 04.09.2021.
+//  Created by Artem Shkirta on 05.09.2021.
 //
 
 import CoreData

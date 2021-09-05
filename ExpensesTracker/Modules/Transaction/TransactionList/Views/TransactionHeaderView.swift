@@ -47,7 +47,7 @@ final class TransactionHeaderView: UIView {
     
     private lazy var topUpBalanceButton: UIButton = {
         let button = UIButton(frame: CGRect(origin: .zero, size: C.Size.topUpBalanceButton))
-        button.setTitle("+", for: .normal)
+        button.setImage(UIImage(named: "icAddWhite"), for: .normal)
         button.addTarget(self, action: #selector(didTapTopUpBalanceButton), for: .touchUpInside)
         button.backgroundColor = .systemBlue
         button.cornerRadius = 25

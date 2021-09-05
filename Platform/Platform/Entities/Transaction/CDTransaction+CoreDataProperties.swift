@@ -2,7 +2,7 @@
 //  CDTransaction+CoreDataProperties.swift
 //  
 //
-//  Created by Artem Shkirta on 03.09.2021.
+//  Created by Artem Shkirta on 05.09.2021.
 //
 //
 
@@ -19,5 +19,5 @@ extension CDTransaction {
     @NSManaged public var price: NSDecimalNumber
     @NSManaged public var currency: Int16
     @NSManaged public var kind: Int16
-
+    @NSManaged public var normalizedCreateDate: String
 }

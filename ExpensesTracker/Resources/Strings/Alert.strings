@@ -1,0 +1,14 @@
+/* 
+  Alert.strings
+  ExpensesTracker
+
+  Created by Artem Shkirta on 05.09.2021.
+  
+*/
+
+"title.error" = "Error";
+
+"action.ok" = "Ok";
+"action.no" = "No";
+"action.yes" = "Yes";
+"action.cancel" = "Cancel";

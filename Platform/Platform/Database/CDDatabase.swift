@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import protocol Domain.Persistable
 
 public final class CDDatabase {
     

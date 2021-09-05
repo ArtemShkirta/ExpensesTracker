@@ -31,6 +31,9 @@
 		6E85E65526E4BE3600AD8BA7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E85E65426E4BE3600AD8BA7 /* Localizable.strings */; };
 		6E85E65926E4C4C000AD8BA7 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E65826E4C4C000AD8BA7 /* Localized.swift */; };
 		6E85E66826E4CA6800AD8BA7 /* UITableView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E66726E4CA6800AD8BA7 /* UITableView+Helpers.swift */; };
+		6E85E66E26E4D5FF00AD8BA7 /* Alert.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E85E66D26E4D5FF00AD8BA7 /* Alert.strings */; };
+		6E85E67326E4D6C600AD8BA7 /* UIAlertAction+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E67226E4D6C600AD8BA7 /* UIAlertAction+Helpers.swift */; };
+		6E85E67526E4DABE00AD8BA7 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E67426E4DABE00AD8BA7 /* Command.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,9 @@
 		6E85E65426E4BE3600AD8BA7 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		6E85E65826E4C4C000AD8BA7 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		6E85E66726E4CA6800AD8BA7 /* UITableView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Helpers.swift"; sourceTree = "<group>"; };
+		6E85E66D26E4D5FF00AD8BA7 /* Alert.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Alert.strings; sourceTree = "<group>"; };
+		6E85E67226E4D6C600AD8BA7 /* UIAlertAction+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+Helpers.swift"; sourceTree = "<group>"; };
+		6E85E67426E4DABE00AD8BA7 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,10 +151,10 @@
 		6E85E5A426E0CB2C00AD8BA7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6E85E67026E4D61B00AD8BA7 /* Strings */,
 				6E85E4C026E0B6B300AD8BA7 /* Assets.xcassets */,
 				6E85E4C226E0B6B300AD8BA7 /* LaunchScreen.storyboard */,
 				6E85E4C526E0B6B300AD8BA7 /* Info.plist */,
-				6E85E65426E4BE3600AD8BA7 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -232,6 +238,7 @@
 		6E85E5CD26E0E75800AD8BA7 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				6E85E67126E4D6B200AD8BA7 /* UIAlert */,
 				6E85E66426E4CA5200AD8BA7 /* UITableView */,
 				6E85E5DF26E26DCD00AD8BA7 /* UIEdgeInsets */,
 				6E85E5DA26E0F20D00AD8BA7 /* UILabel */,
@@ -285,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				6E85E65726E4C4BB00AD8BA7 /* Helpers */,
+				6E85E67426E4DABE00AD8BA7 /* Command.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -303,6 +311,23 @@
 				6E85E66726E4CA6800AD8BA7 /* UITableView+Helpers.swift */,
 			);
 			path = UITableView;
+			sourceTree = "<group>";
+		};
+		6E85E67026E4D61B00AD8BA7 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E65426E4BE3600AD8BA7 /* Localizable.strings */,
+				6E85E66D26E4D5FF00AD8BA7 /* Alert.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		6E85E67126E4D6B200AD8BA7 /* UIAlert */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E67226E4D6C600AD8BA7 /* UIAlertAction+Helpers.swift */,
+			);
+			path = UIAlert;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E85E4C426E0B6B300AD8BA7 /* LaunchScreen.storyboard in Resources */,
+				6E85E66E26E4D5FF00AD8BA7 /* Alert.strings in Resources */,
 				6E85E65526E4BE3600AD8BA7 /* Localizable.strings in Resources */,
 				6E85E4C126E0B6B300AD8BA7 /* Assets.xcassets in Resources */,
 			);
@@ -396,10 +422,12 @@
 				6E85E5C126E0D49D00AD8BA7 /* UseCasesConsumer.swift in Sources */,
 				6E85E5F226E2774C00AD8BA7 /* TransactionSpendingTVC.swift in Sources */,
 				6E85E5A626E0CBAE00AD8BA7 /* AppCoordinator.swift in Sources */,
+				6E85E67326E4D6C600AD8BA7 /* UIAlertAction+Helpers.swift in Sources */,
 				6E85E5B626E0D2C500AD8BA7 /* ModuleFactory.swift in Sources */,
 				6E85E5BB26E0D33700AD8BA7 /* Makeable.swift in Sources */,
 				6E85E5C626E0D73300AD8BA7 /* TransactionListVC.swift in Sources */,
 				6E85E5BF26E0D41300AD8BA7 /* NSObject+AssociatedObject.swift in Sources */,
+				6E85E67526E4DABE00AD8BA7 /* Command.swift in Sources */,
 				6E85E5E326E2706700AD8BA7 /* UIView+AddSubview.swift in Sources */,
 				6E85E4B826E0B6B100AD8BA7 /* AppDelegate.swift in Sources */,
 				6E85E65926E4C4C000AD8BA7 /* Localized.swift in Sources */,
