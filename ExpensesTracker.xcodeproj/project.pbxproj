@@ -33,6 +33,9 @@
 		6E85E66E26E4D5FF00AD8BA7 /* Alert.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E85E66D26E4D5FF00AD8BA7 /* Alert.strings */; };
 		6E85E67326E4D6C600AD8BA7 /* UIAlertAction+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E67226E4D6C600AD8BA7 /* UIAlertAction+Helpers.swift */; };
 		6E85E67526E4DABE00AD8BA7 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E67426E4DABE00AD8BA7 /* Command.swift */; };
+		6E85E69E26E55C6200AD8BA7 /* ExpensesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E69D26E55C6200AD8BA7 /* ExpensesVC.swift */; };
+		6E85E6A126E55C8500AD8BA7 /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E6A026E55C8500AD8BA7 /* ExpensesView.swift */; };
+		6E85E6A326E5698700AD8BA7 /* UIView+EndEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E6A226E5698700AD8BA7 /* UIView+EndEditing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +91,9 @@
 		6E85E66D26E4D5FF00AD8BA7 /* Alert.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Alert.strings; sourceTree = "<group>"; };
 		6E85E67226E4D6C600AD8BA7 /* UIAlertAction+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+Helpers.swift"; sourceTree = "<group>"; };
 		6E85E67426E4DABE00AD8BA7 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		6E85E69D26E55C6200AD8BA7 /* ExpensesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesVC.swift; sourceTree = "<group>"; };
+		6E85E6A026E55C8500AD8BA7 /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
+		6E85E6A226E5698700AD8BA7 /* UIView+EndEditing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+EndEditing.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +185,7 @@
 		6E85E5B226E0D17500AD8BA7 /* Transaction */ = {
 			isa = PBXGroup;
 			children = (
+				6E85E69B26E55C0F00AD8BA7 /* Expenses */,
 				6E85E5C426E0D6EC00AD8BA7 /* TransactionList */,
 				6E85E5B326E0D19E00AD8BA7 /* TransactionCoordinator.swift */,
 				6E85E5C226E0D52900AD8BA7 /* TransactionFactory.swift */,
@@ -249,6 +256,7 @@
 			children = (
 				6E85E5E226E2706700AD8BA7 /* UIView+AddSubview.swift */,
 				6E85E5DD26E10A2900AD8BA7 /* UIView+Helpers.swift */,
+				6E85E6A226E5698700AD8BA7 /* UIView+EndEditing.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -317,6 +325,23 @@
 				6E85E67226E4D6C600AD8BA7 /* UIAlertAction+Helpers.swift */,
 			);
 			path = UIAlert;
+			sourceTree = "<group>";
+		};
+		6E85E69B26E55C0F00AD8BA7 /* Expenses */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E69F26E55C7D00AD8BA7 /* Views */,
+				6E85E69D26E55C6200AD8BA7 /* ExpensesVC.swift */,
+			);
+			path = Expenses;
+			sourceTree = "<group>";
+		};
+		6E85E69F26E55C7D00AD8BA7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E6A026E55C8500AD8BA7 /* ExpensesView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,8 +449,11 @@
 				6E85E5E126E26DE300AD8BA7 /* UIEdgeInsets+Helpers.swift in Sources */,
 				6E85E5F426E2776D00AD8BA7 /* TransactionIncomeTVC.swift in Sources */,
 				6E85E5DE26E10A2900AD8BA7 /* UIView+Helpers.swift in Sources */,
+				6E85E6A326E5698700AD8BA7 /* UIView+EndEditing.swift in Sources */,
 				6E85E65326E4BB0900AD8BA7 /* DateFormatter+Extension.swift in Sources */,
+				6E85E6A126E55C8500AD8BA7 /* ExpensesView.swift in Sources */,
 				6E85E5C326E0D52900AD8BA7 /* TransactionFactory.swift in Sources */,
+				6E85E69E26E55C6200AD8BA7 /* ExpensesVC.swift in Sources */,
 				6E85E5B026E0CFCF00AD8BA7 /* Coordinator.swift in Sources */,
 				6E85E5CC26E0E19200AD8BA7 /* TransactionHeaderView.swift in Sources */,
 			);

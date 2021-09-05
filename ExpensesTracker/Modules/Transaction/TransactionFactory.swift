@@ -9,6 +9,7 @@ import UIKit
 
 protocol TransactionFactoryProtocol {
     func makeTransactionListVC(delegate: TransactionListVCDelegate) -> TransactionListVC
+    func makeExpensesVC(delegate: ExpensesVCDelegate) -> ExpensesVC
     func makeTopUpBalanceAlert(delegate: UITextFieldDelegate, okayHandler: ((String) -> Void)?, cancelHandler: (() -> Void)?) -> UIAlertController
 }
 
@@ -16,6 +17,12 @@ final class TransactionFactory: ModuleFactory, TransactionFactoryProtocol {
     func makeTransactionListVC(delegate: TransactionListVCDelegate) -> TransactionListVC {
         makeController { contoller in
             contoller.delegate =  delegate
+        }
+    }
+    
+    func makeExpensesVC(delegate: ExpensesVCDelegate) -> ExpensesVC {
+        makeController { contoller in
+            contoller.delegate = delegate
         }
     }
     

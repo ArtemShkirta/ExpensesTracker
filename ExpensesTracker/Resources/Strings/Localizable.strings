@@ -11,3 +11,6 @@
 "transactionList.header.label.balance" = "Balance:";
 "transactionList.header.button.addTransaction" = "Add transaction";
 
+// MARK: - Expenses
+"expenses.button.add" = "Add";
+

@@ -10,7 +10,8 @@ import Domain
 import CoreData
 
 protocol TransactionListVCDelegate: AnyObject {
-    func showTopUpBalanceAlert(_ controller: TransactionListVC, callback: Command<String>)
+    func transactionListVCShowTopUpBalanceAlert(_ controller: TransactionListVC, callback: Command<String>)
+    func transactionListVC(_ controller: TransactionListVC, didTapAddTransactionButton button: UIButton)
 }
 
 final class TransactionListVC: UIViewController, UseCasesConsumer {
@@ -197,11 +198,11 @@ extension TransactionListVC: UITextFieldDelegate {
 // MARK: - TransactionHeaderViewDelegate {
 extension TransactionListVC: TransactionHeaderViewDelegate {
     func transactionHeaderView(_ view: TransactionHeaderView, didTapAddTransactionButton button: UIButton) {
-        
+        delegate?.transactionListVC(self, didTapAddTransactionButton: button)
     }
     
     func transactionHeaderView(_ view: TransactionHeaderView, didTapTopUpBalanceButton button: UIButton) {
-        delegate?.showTopUpBalanceAlert(self, callback: topUpBalanceCallback)
+        delegate?.transactionListVCShowTopUpBalanceAlert(self, callback: topUpBalanceCallback)
     }
 }
 

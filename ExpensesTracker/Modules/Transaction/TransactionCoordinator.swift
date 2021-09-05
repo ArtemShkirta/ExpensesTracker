@@ -31,7 +31,7 @@ final class TransactionCoordinator: Coordinator {
 
 // MARK: - TransactionListVCDelegate
 extension TransactionCoordinator: TransactionListVCDelegate {
-    func showTopUpBalanceAlert(_ controller: TransactionListVC, callback: Command<String>) {
+    func transactionListVCShowTopUpBalanceAlert(_ controller: TransactionListVC, callback: Command<String>) {
         let alertController = factory.makeTopUpBalanceAlert(delegate: controller,
                                                             okayHandler: { [weak presenter] value in
                                                                 callback.perform(value: value)
@@ -40,5 +40,17 @@ extension TransactionCoordinator: TransactionListVCDelegate {
                                                                 presenter?.dismiss(animated: true)
                                                             })
         presenter.present(alertController, animated: true)
+    }
+    
+    func transactionListVC(_ controller: TransactionListVC, didTapAddTransactionButton button: UIButton) {
+        let expensesVC = factory.makeExpensesVC(delegate: self)
+        presenter.pushViewController(expensesVC, animated: true)
+    }
+}
+
+// MARK: - ExpensesVCDelegate
+extension TransactionCoordinator: ExpensesVCDelegate {
+    func expensesVC(_ controller: ExpensesVC, didTapAddButton button: UIButton) {
+        presenter.popViewController(animated: true)
     }
 }

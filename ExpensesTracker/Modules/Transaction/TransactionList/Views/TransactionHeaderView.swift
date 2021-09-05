@@ -62,7 +62,7 @@ final class TransactionHeaderView: UIView {
         button.addTarget(self, action: #selector(didTapAddTransactionButton), for: .touchUpInside)
         button.setTitle(Localized("transactionList.header.button.addTransaction"), for: .normal)
         button.backgroundColor = .systemBlue
-        button.cornerRadius = 16
+        button.cornerRadius = C.Size.addTransactionButton.height / 2
         return button
     }()
     
@@ -71,7 +71,7 @@ final class TransactionHeaderView: UIView {
         button.setImage(UIImage(named: "icAddWhite"), for: .normal)
         button.addTarget(self, action: #selector(didTapTopUpBalanceButton), for: .touchUpInside)
         button.backgroundColor = .systemBlue
-        button.cornerRadius = 25
+        button.cornerRadius = C.Size.topUpBalanceButton.height / 2
         return button
     }()
     

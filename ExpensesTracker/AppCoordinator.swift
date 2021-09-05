@@ -22,6 +22,7 @@ final class AppCoordinator: Coordinator {
     
     func start(animated: Bool) {
         let presenter = UINavigationController()
+        presenter.navigationBar.isTranslucent = false
         window.rootViewController = presenter
         TransactionCoordinator(presenter: presenter, useCases: useCases).start(animated: false)
         window.makeKeyAndVisible()

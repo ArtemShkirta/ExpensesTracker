@@ -7,7 +7,7 @@
 
 public final class Expenses: Transaction {
     
-    public enum Sort: Int16 {
+    public enum Sort: Int16, CaseIterable {
         case groceries, taxi, electronics, restaurant, other
         
         public var name: String {
