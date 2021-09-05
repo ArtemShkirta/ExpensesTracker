@@ -9,6 +9,18 @@
 /* Begin PBXBuildFile section */
 		6E85E58E26E0C93B00AD8BA7 /* Platform.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E85E58C26E0C93B00AD8BA7 /* Platform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6E85E59B26E0C9CF00AD8BA7 /* Domain.framework in Domain */ = {isa = PBXBuildFile; fileRef = 6E85E59926E0C99B00AD8BA7 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6E85E60A26E280D100AD8BA7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E60826E280D100AD8BA7 /* Model.xcdatamodeld */; };
+		6E85E61326E28A4C00AD8BA7 /* CDTransaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E61126E28A4C00AD8BA7 /* CDTransaction+CoreDataClass.swift */; };
+		6E85E61426E28A4C00AD8BA7 /* CDTransaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E61226E28A4C00AD8BA7 /* CDTransaction+CoreDataProperties.swift */; };
+		6E85E61826E28A8700AD8BA7 /* CDExpenses+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E61626E28A8700AD8BA7 /* CDExpenses+CoreDataProperties.swift */; };
+		6E85E61926E28A8700AD8BA7 /* CDExpenses+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E61726E28A8700AD8BA7 /* CDExpenses+CoreDataClass.swift */; };
+		6E85E61B26E3ADA600AD8BA7 /* CDDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E61A26E3ADA600AD8BA7 /* CDDatabase.swift */; };
+		6E85E61E26E3ADFD00AD8BA7 /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E61D26E3ADFD00AD8BA7 /* Persistable.swift */; };
+		6E85E62526E3B76D00AD8BA7 /* DatabaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E62426E3B76D00AD8BA7 /* DatabaseError.swift */; };
+		6E85E62A26E3BAC100AD8BA7 /* NSManagedObjectContext+Save.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E62926E3BAC100AD8BA7 /* NSManagedObjectContext+Save.swift */; };
+		6E85E63026E3FEA300AD8BA7 /* CDDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E62F26E3FEA300AD8BA7 /* CDDataSource.swift */; };
+		6E85E63D26E40F9C00AD8BA7 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E63C26E40F9C00AD8BA7 /* Platform.swift */; };
+		6E85E63F26E4100200AD8BA7 /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E63E26E4100200AD8BA7 /* TransactionService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +52,18 @@
 		6E85E58C26E0C93B00AD8BA7 /* Platform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Platform.h; sourceTree = "<group>"; };
 		6E85E58D26E0C93B00AD8BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E85E59426E0C99B00AD8BA7 /* Domain.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Domain.xcodeproj; path = ../Domain/Domain.xcodeproj; sourceTree = "<group>"; };
+		6E85E60926E280D100AD8BA7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		6E85E61126E28A4C00AD8BA7 /* CDTransaction+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDTransaction+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6E85E61226E28A4C00AD8BA7 /* CDTransaction+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDTransaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6E85E61626E28A8700AD8BA7 /* CDExpenses+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDExpenses+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6E85E61726E28A8700AD8BA7 /* CDExpenses+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDExpenses+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6E85E61A26E3ADA600AD8BA7 /* CDDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDDatabase.swift; sourceTree = "<group>"; };
+		6E85E61D26E3ADFD00AD8BA7 /* Persistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
+		6E85E62426E3B76D00AD8BA7 /* DatabaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseError.swift; sourceTree = "<group>"; };
+		6E85E62926E3BAC100AD8BA7 /* NSManagedObjectContext+Save.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Save.swift"; sourceTree = "<group>"; };
+		6E85E62F26E3FEA300AD8BA7 /* CDDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDDataSource.swift; sourceTree = "<group>"; };
+		6E85E63C26E40F9C00AD8BA7 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
+		6E85E63E26E4100200AD8BA7 /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +97,12 @@
 		6E85E58B26E0C93A00AD8BA7 /* Platform */ = {
 			isa = PBXGroup;
 			children = (
+				6E85E63C26E40F9C00AD8BA7 /* Platform.swift */,
+				6E85E63626E400D100AD8BA7 /* Services */,
+				6E85E62626E3BA9F00AD8BA7 /* Extensions */,
+				6E85E61C26E3ADF000AD8BA7 /* Protocols */,
+				6E85E60F26E289D600AD8BA7 /* Entities */,
+				6E85E60626E280B200AD8BA7 /* Database */,
 				6E85E58C26E0C93B00AD8BA7 /* Platform.h */,
 				6E85E58D26E0C93B00AD8BA7 /* Info.plist */,
 			);
@@ -85,6 +115,84 @@
 				6E85E59926E0C99B00AD8BA7 /* Domain.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		6E85E60626E280B200AD8BA7 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E62F26E3FEA300AD8BA7 /* CDDataSource.swift */,
+				6E85E61A26E3ADA600AD8BA7 /* CDDatabase.swift */,
+				6E85E62426E3B76D00AD8BA7 /* DatabaseError.swift */,
+				6E85E60826E280D100AD8BA7 /* Model.xcdatamodeld */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		6E85E60F26E289D600AD8BA7 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E61526E28A5700AD8BA7 /* Expenses */,
+				6E85E61026E28A4C00AD8BA7 /* Transaction */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		6E85E61026E28A4C00AD8BA7 /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E61126E28A4C00AD8BA7 /* CDTransaction+CoreDataClass.swift */,
+				6E85E61226E28A4C00AD8BA7 /* CDTransaction+CoreDataProperties.swift */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		6E85E61526E28A5700AD8BA7 /* Expenses */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E61726E28A8700AD8BA7 /* CDExpenses+CoreDataClass.swift */,
+				6E85E61626E28A8700AD8BA7 /* CDExpenses+CoreDataProperties.swift */,
+			);
+			path = Expenses;
+			sourceTree = "<group>";
+		};
+		6E85E61C26E3ADF000AD8BA7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E61D26E3ADFD00AD8BA7 /* Persistable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		6E85E62626E3BA9F00AD8BA7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E62726E3BAA900AD8BA7 /* CoreData */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6E85E62726E3BAA900AD8BA7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E62826E3BAB200AD8BA7 /* NSManagedObjectContext */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		6E85E62826E3BAB200AD8BA7 /* NSManagedObjectContext */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E62926E3BAC100AD8BA7 /* NSManagedObjectContext+Save.swift */,
+			);
+			path = NSManagedObjectContext;
+			sourceTree = "<group>";
+		};
+		6E85E63626E400D100AD8BA7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E63E26E4100200AD8BA7 /* TransactionService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +290,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E85E62A26E3BAC100AD8BA7 /* NSManagedObjectContext+Save.swift in Sources */,
+				6E85E60A26E280D100AD8BA7 /* Model.xcdatamodeld in Sources */,
+				6E85E61926E28A8700AD8BA7 /* CDExpenses+CoreDataClass.swift in Sources */,
+				6E85E61E26E3ADFD00AD8BA7 /* Persistable.swift in Sources */,
+				6E85E61426E28A4C00AD8BA7 /* CDTransaction+CoreDataProperties.swift in Sources */,
+				6E85E61326E28A4C00AD8BA7 /* CDTransaction+CoreDataClass.swift in Sources */,
+				6E85E63D26E40F9C00AD8BA7 /* Platform.swift in Sources */,
+				6E85E63026E3FEA300AD8BA7 /* CDDataSource.swift in Sources */,
+				6E85E62526E3B76D00AD8BA7 /* DatabaseError.swift in Sources */,
+				6E85E61826E28A8700AD8BA7 /* CDExpenses+CoreDataProperties.swift in Sources */,
+				6E85E61B26E3ADA600AD8BA7 /* CDDatabase.swift in Sources */,
+				6E85E63F26E4100200AD8BA7 /* TransactionService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +498,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6E85E60826E280D100AD8BA7 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6E85E60926E280D100AD8BA7 /* Model.xcdatamodel */,
+			);
+			currentVersion = 6E85E60926E280D100AD8BA7 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6E85E58026E0C93A00AD8BA7 /* Project object */;
 }
