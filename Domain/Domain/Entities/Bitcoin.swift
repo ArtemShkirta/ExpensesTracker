@@ -7,13 +7,16 @@
 
 import Foundation
 
-struct Bitcoin {
+public struct Bitcoin {
+    public let code: String
+    public let rate: Decimal
     
-}
-
-extension Bitcoin {
-    struct Price {
-        let code: String
-        let rate: Decimal
+    public var fullDescription: String {
+        NumberFormatter.price.string(for: rate) ?? "NaN" + " \(code)"
+    }
+    
+    public init(code: String, rate: Decimal) {
+        self.code = code
+        self.rate = rate
     }
 }

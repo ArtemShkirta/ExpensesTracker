@@ -32,7 +32,7 @@ final class BitcoinService: BitcoinUseCase {
                                                object: nil)
     }
     
-    func bitcoinExchangeRate(completion: @escaping (Result<Decimal, AppError>) -> Void) {
+    func bitcoinExchangeRate(completion: @escaping (Result<Bitcoin, AppError>) -> Void) {
         guard let url = Environment.bitcoinPriceURL else {
             return completion(.failure(.network(.incorretURL)))
         }
@@ -41,27 +41,36 @@ final class BitcoinService: BitcoinUseCase {
                 return completion(.failure(.network(.incorrectJSON)))
             }
             do {
-                let json = try JSONSerialization.jsonObject(with: data)
-                print("dasdasda \(json)")
+                let bitcoin = try JSONDecoder().decode(Bitcoin.Response.self, from: data)
+                completion(.success(Bitcoin(bitcoin)))
             } catch {
                 completion(.failure(.network(.parseError)))
             }
         }.resume()
     }
     
-    // MARK: - Helper Methods
-    private func startTimer() {
+    func startUpdateExchangeRateTimer() {
+        invalidateTimer()
         timer = .scheduledTimer(withTimeInterval: C.updateExchangeRateInterval, repeats: true) { [weak self] timer in
             self?.notifier.notify(about: .shouldUpdateRate)
         }
     }
     
-    @objc private func didEnterBackground() {
+    func stopUpdateExchangeRateTimer() {
+        invalidateTimer()
+    }
+    
+    // MARK: - Helper Methods
+    private func invalidateTimer() {
         timer?.invalidate()
         timer = nil
     }
     
+    @objc private func didEnterBackground() {
+        invalidateTimer()
+    }
+    
     @objc private func willEnterForeground() {
-        startTimer()
+        startUpdateExchangeRateTimer()
     }
 }

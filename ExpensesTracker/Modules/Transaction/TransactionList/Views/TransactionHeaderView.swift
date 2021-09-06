@@ -6,6 +6,7 @@
 //
 
 import UIKit.UIView
+import struct Domain.Bitcoin
 
 protocol TransactionHeaderViewDelegate: AnyObject {
     func transactionHeaderView(_ view: TransactionHeaderView, didTapAddTransactionButton button: UIButton)
@@ -99,8 +100,8 @@ final class TransactionHeaderView: UIView {
         balanceLabel.text = newBalance.description
     }
     
-    func updateExchangeRate(_ newRate: Decimal) {
-        exchangeRateLabel.text = newRate.description
+    func updateExchangeRate(_ bitcoin: Bitcoin) {
+        exchangeRateLabel.text = bitcoin.fullDescription
     }
     
     // MARK: - Actions

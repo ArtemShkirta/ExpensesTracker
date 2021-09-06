@@ -61,6 +61,7 @@ final class TransactionListVC: UIViewController, UseCasesConsumer {
     
     deinit {
         useCases.observer.removeObserver(self, forActions: .balanceUpdated, .shouldUpdateRate)
+        useCases.bitcoin.stopUpdateExchangeRateTimer()
     }
     
     // MARK: - Setup
@@ -69,6 +70,7 @@ final class TransactionListVC: UIViewController, UseCasesConsumer {
         performFetch()
         checkCurrentBalance()
         checkExchangeRate()
+        useCases.bitcoin.startUpdateExchangeRateTimer()
     }
     
     private func performFetch() {
@@ -96,8 +98,8 @@ final class TransactionListVC: UIViewController, UseCasesConsumer {
         useCases.bitcoin.bitcoinExchangeRate { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
-                case .success(let newRate):
-                    self?.headerView.updateExchangeRate(newRate)
+                case .success(let bitcoin):
+                    self?.headerView.updateExchangeRate(bitcoin)
                 case .failure(let error):
                     self?.showError(error)
                 }

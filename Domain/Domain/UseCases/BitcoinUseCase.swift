@@ -8,5 +8,7 @@
 import Foundation
 
 public protocol BitcoinUseCase {
-    func bitcoinExchangeRate(completion: @escaping (Result<Decimal, AppError>) -> Void)
+    func bitcoinExchangeRate(completion: @escaping (Result<Bitcoin, AppError>) -> Void)
+    func startUpdateExchangeRateTimer()
+    func stopUpdateExchangeRateTimer()
 }
