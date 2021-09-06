@@ -9,6 +9,7 @@ import Foundation
 
 public enum ChangeAction: Hashable {
     case balanceUpdated
+    case shouldUpdateRate
 }
 
 public protocol DataChangeObserver: AnyObject {

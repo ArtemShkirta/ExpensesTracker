@@ -11,6 +11,7 @@ public enum NetworkError: Error {
     case incorretURL
     case incorrectJSON
     case parseError
+    case connection(Error)
     
     public var asAppError: AppError {
         .network(self)
@@ -19,6 +20,11 @@ public enum NetworkError: Error {
 
 extension NetworkError: LocalizedError {
     public var errorDescription: String? {
-        LocalizedError(key: "network.internal")
+        switch self {
+        case .connection:
+            return LocalizedError(key: "network.connection")
+        case .incorretURL, .incorrectJSON, .parseError:
+            return LocalizedError(key: "network.internal")
+        }
     }
 }

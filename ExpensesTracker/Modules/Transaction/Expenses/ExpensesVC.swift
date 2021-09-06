@@ -55,23 +55,6 @@ extension ExpensesVC: Makeable {
     }
 }
 
-// MARK: - ExpensesViewDelegate
-extension ExpensesVC: ExpensesViewDelegate {
-    func expensesView(_ view: ExpensesView, didTapAddButton button: UIButton) {
-        guard let price = expensesView.prise else {
-            return showError(AppError.validation(.priceEmpty))
-        }
-        guard let sort = expensesView.sort, let expensesSort = Expenses.Sort(name: sort) else {
-            return showError(AppError.validation(.sortEmpty))
-        }
-        useCases.transaction.save(transaction: Expenses(price: Price(value: -price), sort: expensesSort)) { [weak self] result in
-            DispatchQueue.main.async {
-                self?.handleSaveResult(result, addButton: button)
-            }
-        }
-    }
-}
-
 // MARK: - UIPickerViewDataSource
 extension ExpensesVC: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -91,5 +74,30 @@ extension ExpensesVC: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         expensesView.updateSort(Expenses.Sort.allCases[row].name)
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension ExpensesVC: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        PriceTextProcessor(max: 10).shouldReplaceCharacters(in: range, replacement: string, textInput: textField)
+    }
+}
+
+
+// MARK: - ExpensesViewDelegate
+extension ExpensesVC: ExpensesViewDelegate {
+    func expensesView(_ view: ExpensesView, didTapAddButton button: UIButton) {
+        guard let price = expensesView.prise else {
+            return showError(AppError.validation(.priceEmpty))
+        }
+        guard let sort = expensesView.sort, let expensesSort = Expenses.Sort(name: sort) else {
+            return showError(AppError.validation(.sortEmpty))
+        }
+        useCases.transaction.save(transaction: Expenses(price: Price(value: -price), sort: expensesSort)) { [weak self] result in
+            DispatchQueue.main.async {
+                self?.handleSaveResult(result, addButton: button)
+            }
+        }
     }
 }

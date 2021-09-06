@@ -11,6 +11,4 @@ public protocol TransactionUseCase {
     func makeDataSource(delegate: NSFetchedResultsControllerDelegate) -> AnyDataSource<Transaction>
     func save<T: Transaction & Persistable>(transaction: T, completion: @escaping (Result<T, AppError>) -> Void)
     func currentBalance(completion: @escaping (Result<Decimal, AppError>) -> Void)
-    func addObserver(_ observer: DataChangeObserver, forActions actions: ChangeAction...)
-    func removeObserver(_ observer: DataChangeObserver, forActions actions: ChangeAction...)
 }

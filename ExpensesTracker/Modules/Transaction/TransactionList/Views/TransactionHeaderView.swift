@@ -99,6 +99,10 @@ final class TransactionHeaderView: UIView {
         balanceLabel.text = newBalance.description
     }
     
+    func updateExchangeRate(_ newRate: Decimal) {
+        exchangeRateLabel.text = newRate.description
+    }
+    
     // MARK: - Actions
     @objc private func didTapAddTransactionButton(_ button: UIButton) {
         delegate?.transactionHeaderView(self, didTapAddTransactionButton: button)

@@ -12,26 +12,13 @@ final class TransactionService: TransactionUseCase {
     
     // MARK: - Properties
     private let database: CDDatabase
-    private var observers: [ChangeAction: WeakSet<DataChangeObserver>] = [:]
     private var currentBalance: Decimal?
+    private let notifier: DataChangeNotifier
     
     // MARK: - Lifecycle
-    init(database: CDDatabase) {
+    init(database: CDDatabase, notifier: DataChangeNotifier) {
         self.database = database
-    }
-    
-    func addObserver(_ observer: DataChangeObserver, forActions actions: ChangeAction...) {
-        actions.forEach { action in
-            let actionObservers = observers[action] ?? WeakSet<DataChangeObserver>()
-            actionObservers.append(observer)
-            observers[action] = actionObservers
-        }
-    }
-    
-    func removeObserver(_ observer: DataChangeObserver, forActions actions: ChangeAction...) {
-        actions.forEach { action in
-            observers[action].flatMap { $0.remove(observer) }
-        }
+        self.notifier = notifier
     }
     
     func currentBalance(completion: @escaping (Result<Decimal, AppError>) -> Void) {
@@ -67,7 +54,7 @@ final class TransactionService: TransactionUseCase {
             case .success(let value):
                 let balance = self?.currentBalance ?? 0
                 self?.currentBalance = balance + value.price.value
-                self?.observers[.balanceUpdated]?.forEach { $0.domain(didPerform: .balanceUpdated) }
+                self?.notifier.notify(about: .balanceUpdated)
                 completion(.success(value))
             case .failure(let error):
                 completion(.failure(error.asAppError))

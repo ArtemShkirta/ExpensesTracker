@@ -26,6 +26,7 @@
 		6E85E68E26E50B9600AD8BA7 /* WeakSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E68D26E50B9600AD8BA7 /* WeakSet.swift */; };
 		6E85E69026E5579100AD8BA7 /* BitcoinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E68F26E5579100AD8BA7 /* BitcoinService.swift */; };
 		6E85E69326E557CE00AD8BA7 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E69226E557CE00AD8BA7 /* Environment.swift */; };
+		6E85E6D126E6179500AD8BA7 /* DataChangeNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E6D026E6179400AD8BA7 /* DataChangeNotifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		6E85E68D26E50B9600AD8BA7 /* WeakSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakSet.swift; sourceTree = "<group>"; };
 		6E85E68F26E5579100AD8BA7 /* BitcoinService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinService.swift; sourceTree = "<group>"; };
 		6E85E69226E557CE00AD8BA7 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		6E85E6D026E6179400AD8BA7 /* DataChangeNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataChangeNotifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 		6E85E63626E400D100AD8BA7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6E85E6D026E6179400AD8BA7 /* DataChangeNotifier.swift */,
 				6E85E63E26E4100200AD8BA7 /* TransactionService.swift */,
 				6E85E68F26E5579100AD8BA7 /* BitcoinService.swift */,
 			);
@@ -377,6 +380,7 @@
 				6E85E61426E28A4C00AD8BA7 /* CDTransaction+CoreDataProperties.swift in Sources */,
 				6E85E61326E28A4C00AD8BA7 /* CDTransaction+CoreDataClass.swift in Sources */,
 				6E85E63D26E40F9C00AD8BA7 /* Platform.swift in Sources */,
+				6E85E6D126E6179500AD8BA7 /* DataChangeNotifier.swift in Sources */,
 				6E85E67F26E5004200AD8BA7 /* AttributeTypeConvertible.swift in Sources */,
 				6E85E63026E3FEA300AD8BA7 /* CDDataSource.swift in Sources */,
 				6E85E68126E5008500AD8BA7 /* NSManagedObjectContext+Find.swift in Sources */,

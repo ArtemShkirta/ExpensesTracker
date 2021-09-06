@@ -33,7 +33,7 @@ final class TransactionFactory: ModuleFactory, TransactionFactoryProtocol {
         let controller = UIAlertController(title: LocalizedAlert("topUpBalance.title"), message: LocalizedAlert("topUpBalance.message"), preferredStyle: .alert)
         controller.addTextField { textField in
             textField.delegate = delegate
-            textField.keyboardType = .numberPad
+            textField.keyboardType = .decimalPad
             textField.placeholder = LocalizedAlert("topUpBalance.placeholder")
         }
         controller.addAction(.okay { [weak controller] _ in

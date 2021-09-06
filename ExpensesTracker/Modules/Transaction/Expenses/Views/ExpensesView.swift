@@ -13,7 +13,7 @@ protocol ExpensesViewDelegate: AnyObject {
 
 final class ExpensesView: UIView {
     
-    typealias Delegate = ExpensesViewDelegate & UIPickerViewDelegate & UIPickerViewDataSource
+    typealias Delegate = ExpensesViewDelegate & UIPickerViewDelegate & UIPickerViewDataSource & UITextFieldDelegate
     
     private enum C {
         enum Insets {
@@ -42,6 +42,7 @@ final class ExpensesView: UIView {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
         textField.keyboardType = .decimalPad
+    
         textField.placeholder = Localized("expenses.textField.price.placeholder")
         return textField
     }()
@@ -75,6 +76,7 @@ final class ExpensesView: UIView {
         self.delegate = delegate
         pickerView.dataSource = delegate
         pickerView.delegate = delegate
+        priceTextField.delegate = delegate
         setupSubviews()
     }
     

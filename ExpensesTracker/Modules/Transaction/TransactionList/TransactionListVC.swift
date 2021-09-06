@@ -17,7 +17,7 @@ protocol TransactionListVCDelegate: AnyObject {
 
 final class TransactionListVC: UIViewController, UseCasesConsumer {
     
-    typealias UseCases = HasTransactionUseCase
+    typealias UseCases = HasTransactionUseCase & HasObserverUseCase & HasBitcoinUseCase
     
     // MARK: - Public Properties
     weak var delegate: TransactionListVCDelegate?
@@ -26,7 +26,7 @@ final class TransactionListVC: UIViewController, UseCasesConsumer {
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: UIScreen.main.bounds, style: .grouped)
         tableView.dataSource = self
-        tableView.setAndLayoutTableHeaderView(header: headerView)
+        tableView.setupAndLayoutTableHeaderView(headerView)
         tableView.register(TransactionSpendingTVC.self, TransactionIncomeTVC.self)
         tableView.tableFooterView = UIView()
         tableView.rowHeight = UITableView.automaticDimension
@@ -60,14 +60,15 @@ final class TransactionListVC: UIViewController, UseCasesConsumer {
     }
     
     deinit {
-        useCases.transaction.removeObserver(self, forActions: .balanceUpdated)
+        useCases.observer.removeObserver(self, forActions: .balanceUpdated, .shouldUpdateRate)
     }
     
     // MARK: - Setup
     private func setupView() {
-        useCases.transaction.addObserver(self, forActions: .balanceUpdated)
+        useCases.observer.addObserver(self, forActions: .balanceUpdated, .shouldUpdateRate)
         performFetch()
         checkCurrentBalance()
+        checkExchangeRate()
     }
     
     private func performFetch() {
@@ -84,6 +85,19 @@ final class TransactionListVC: UIViewController, UseCasesConsumer {
                 switch result {
                 case .success(let newBalance):
                     self?.headerView.updateBalance(newBalance)
+                case .failure(let error):
+                    self?.showError(error)
+                }
+            }
+        }
+    }
+    
+    private func checkExchangeRate() {
+        useCases.bitcoin.bitcoinExchangeRate { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let newRate):
+                    self?.headerView.updateExchangeRate(newRate)
                 case .failure(let error):
                     self?.showError(error)
                 }
@@ -193,7 +207,9 @@ extension TransactionListVC: NSFetchedResultsControllerDelegate {
 
 // MARK: - UITextFieldDelegate
 extension TransactionListVC: UITextFieldDelegate {
-    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        PriceTextProcessor(max: 10).shouldReplaceCharacters(in: range, replacement: string, textInput: textField)
+    }
 }
 
 // MARK: - TransactionHeaderViewDelegate {
@@ -213,19 +229,8 @@ extension TransactionListVC: DataChangeObserver {
         switch action {
         case .balanceUpdated:
             checkCurrentBalance()
+        case .shouldUpdateRate:
+            checkExchangeRate()
         }
-    }
-}
-
-extension UITableView {
-    func setAndLayoutTableHeaderView(header: UIView) {
-//        self.tableHeaderView = header
-//        header.setNeedsLayout()
-//        header.layoutIfNeeded()
-        let height = header.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
-        var frame = header.frame
-        frame.size.height = height
-        header.frame = frame
-        self.tableHeaderView = header
     }
 }

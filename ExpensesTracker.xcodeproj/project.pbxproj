@@ -36,6 +36,11 @@
 		6E85E69E26E55C6200AD8BA7 /* ExpensesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E69D26E55C6200AD8BA7 /* ExpensesVC.swift */; };
 		6E85E6A126E55C8500AD8BA7 /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E6A026E55C8500AD8BA7 /* ExpensesView.swift */; };
 		6E85E6A326E5698700AD8BA7 /* UIView+EndEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E6A226E5698700AD8BA7 /* UIView+EndEditing.swift */; };
+		6E85E6BD26E5F89500AD8BA7 /* TextProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E6BC26E5F89500AD8BA7 /* TextProcessor.swift */; };
+		6E85E6BF26E5FB8B00AD8BA7 /* TextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E6BE26E5FB8B00AD8BA7 /* TextInput.swift */; };
+		6E85E6C126E5FC5000AD8BA7 /* LengthTextProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E6C026E5FC5000AD8BA7 /* LengthTextProcessor.swift */; };
+		6E85E6C326E5FD1200AD8BA7 /* NumberTextProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E6C226E5FD1200AD8BA7 /* NumberTextProcessor.swift */; };
+		6E85E6C526E5FEE600AD8BA7 /* PriceTextProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85E6C426E5FEE600AD8BA7 /* PriceTextProcessor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +99,11 @@
 		6E85E69D26E55C6200AD8BA7 /* ExpensesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesVC.swift; sourceTree = "<group>"; };
 		6E85E6A026E55C8500AD8BA7 /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
 		6E85E6A226E5698700AD8BA7 /* UIView+EndEditing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+EndEditing.swift"; sourceTree = "<group>"; };
+		6E85E6BC26E5F89500AD8BA7 /* TextProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextProcessor.swift; sourceTree = "<group>"; };
+		6E85E6BE26E5FB8B00AD8BA7 /* TextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInput.swift; sourceTree = "<group>"; };
+		6E85E6C026E5FC5000AD8BA7 /* LengthTextProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LengthTextProcessor.swift; sourceTree = "<group>"; };
+		6E85E6C226E5FD1200AD8BA7 /* NumberTextProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTextProcessor.swift; sourceTree = "<group>"; };
+		6E85E6C426E5FEE600AD8BA7 /* PriceTextProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTextProcessor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +298,7 @@
 		6E85E65626E4C4AE00AD8BA7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				6E85E6BB26E5F88400AD8BA7 /* TextProcessor */,
 				6E85E65726E4C4BB00AD8BA7 /* Helpers */,
 				6E85E67426E4DABE00AD8BA7 /* Command.swift */,
 			);
@@ -342,6 +353,18 @@
 				6E85E6A026E55C8500AD8BA7 /* ExpensesView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		6E85E6BB26E5F88400AD8BA7 /* TextProcessor */ = {
+			isa = PBXGroup;
+			children = (
+				6E85E6BC26E5F89500AD8BA7 /* TextProcessor.swift */,
+				6E85E6BE26E5FB8B00AD8BA7 /* TextInput.swift */,
+				6E85E6C026E5FC5000AD8BA7 /* LengthTextProcessor.swift */,
+				6E85E6C426E5FEE600AD8BA7 /* PriceTextProcessor.swift */,
+				6E85E6C226E5FD1200AD8BA7 /* NumberTextProcessor.swift */,
+			);
+			path = TextProcessor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,20 +461,25 @@
 				6E85E5A626E0CBAE00AD8BA7 /* AppCoordinator.swift in Sources */,
 				6E85E67326E4D6C600AD8BA7 /* UIAlertAction+Helpers.swift in Sources */,
 				6E85E5B626E0D2C500AD8BA7 /* ModuleFactory.swift in Sources */,
+				6E85E6BD26E5F89500AD8BA7 /* TextProcessor.swift in Sources */,
 				6E85E5BB26E0D33700AD8BA7 /* Makeable.swift in Sources */,
 				6E85E5C626E0D73300AD8BA7 /* TransactionListVC.swift in Sources */,
 				6E85E5BF26E0D41300AD8BA7 /* NSObject+AssociatedObject.swift in Sources */,
 				6E85E67526E4DABE00AD8BA7 /* Command.swift in Sources */,
+				6E85E6C126E5FC5000AD8BA7 /* LengthTextProcessor.swift in Sources */,
 				6E85E5E326E2706700AD8BA7 /* UIView+AddSubview.swift in Sources */,
 				6E85E4B826E0B6B100AD8BA7 /* AppDelegate.swift in Sources */,
 				6E85E65926E4C4C000AD8BA7 /* Localized.swift in Sources */,
 				6E85E66826E4CA6800AD8BA7 /* UITableView+Helpers.swift in Sources */,
 				6E85E5E126E26DE300AD8BA7 /* UIEdgeInsets+Helpers.swift in Sources */,
 				6E85E5F426E2776D00AD8BA7 /* TransactionIncomeTVC.swift in Sources */,
+				6E85E6C326E5FD1200AD8BA7 /* NumberTextProcessor.swift in Sources */,
 				6E85E5DE26E10A2900AD8BA7 /* UIView+Helpers.swift in Sources */,
 				6E85E6A326E5698700AD8BA7 /* UIView+EndEditing.swift in Sources */,
+				6E85E6C526E5FEE600AD8BA7 /* PriceTextProcessor.swift in Sources */,
 				6E85E65326E4BB0900AD8BA7 /* DateFormatter+Extension.swift in Sources */,
 				6E85E6A126E55C8500AD8BA7 /* ExpensesView.swift in Sources */,
+				6E85E6BF26E5FB8B00AD8BA7 /* TextInput.swift in Sources */,
 				6E85E5C326E0D52900AD8BA7 /* TransactionFactory.swift in Sources */,
 				6E85E69E26E55C6200AD8BA7 /* ExpensesVC.swift in Sources */,
 				6E85E5B026E0CFCF00AD8BA7 /* Coordinator.swift in Sources */,

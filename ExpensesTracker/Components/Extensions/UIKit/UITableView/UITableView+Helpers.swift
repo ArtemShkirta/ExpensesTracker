@@ -27,4 +27,10 @@ extension UITableView {
         builder(cell)
         return cell
     }
+    
+    func setupAndLayoutTableHeaderView(_ header: UIView) {
+        let height = header.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
+        header.frame = CGRect(origin: header.frame.origin, size: CGSize(width: header.frame.width, height: height))
+        self.tableHeaderView = header
+    }
 }
