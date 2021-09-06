@@ -30,8 +30,8 @@ extension Expenses: Persistable {
 // MARK: - DatabaseRepresentable
 extension Expenses: DatabaseRepresentable {
     public convenience init(_ object: CDExpenses) throws {
-        self.init(createDate: object.createDate,
-                  price: Price(value: object.price.decimalValue, currency: Currency(id: object.currency)),
-                  sort: Expenses.Sort(rawValue: object.sort) ?? .other)
+        self.init(price: Price(value: object.price.decimalValue, currency: Currency(id: object.currency)),
+                  sort: Expenses.Sort(rawValue: object.sort) ?? .other,
+                  createDate: object.createDate)
     }
 }

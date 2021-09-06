@@ -7,6 +7,7 @@
 
 import CoreData
 import protocol Domain.Persistable
+import enum Domain.DatabaseError
 
 public final class CDDatabase {
     

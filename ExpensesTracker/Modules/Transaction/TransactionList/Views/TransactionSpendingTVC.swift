@@ -58,7 +58,7 @@ final class TransactionSpendingTVC: UITableViewCell {
     // MARK: - Config
     func config(sort: Expenses.Sort, price: Price, date: Date) {
         titleLabel.text = sort.name
-        amountLabel.text = "-\(price.displayFull)"
+        amountLabel.text = price.displayFull
         dateLabel.text = DateFormatter.transaction.string(from: date)
     }
     

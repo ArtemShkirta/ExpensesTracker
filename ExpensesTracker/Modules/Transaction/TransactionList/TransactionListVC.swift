@@ -12,6 +12,7 @@ import CoreData
 protocol TransactionListVCDelegate: AnyObject {
     func transactionListVCShowTopUpBalanceAlert(_ controller: TransactionListVC, callback: Command<String>)
     func transactionListVC(_ controller: TransactionListVC, didTapAddTransactionButton button: UIButton)
+    func transactionListVC(_ controller: TransactionListVC, shouldShowError error: Error)
 }
 
 final class TransactionListVC: UIViewController, UseCasesConsumer {
@@ -39,7 +40,7 @@ final class TransactionListVC: UIViewController, UseCasesConsumer {
     
     private lazy var topUpBalanceCallback: Command<String> = Command { [weak self] value in
         guard let income = Double(value) else { return }
-        self?.useCases.transaction.save(transaction: Income(createDate: Date(), price: Price(value: Decimal(income), currency: .bitcoin)), completion: { _ in
+        self?.useCases.transaction.save(transaction: Income(price: Price(value: Decimal(income))), completion: { _ in
             
         })
     }
@@ -73,7 +74,7 @@ final class TransactionListVC: UIViewController, UseCasesConsumer {
         do {
             try dataSource.performFetch()
         } catch {
-            handleError(error)
+            showError(error)
         }
     }
     
@@ -84,14 +85,14 @@ final class TransactionListVC: UIViewController, UseCasesConsumer {
                 case .success(let newBalance):
                     self?.headerView.updateBalance(newBalance)
                 case .failure(let error):
-                    self?.handleError(error)
+                    self?.showError(error)
                 }
             }
         }
     }
     
-    private func handleError(_ error: Error) {
-        
+    private func showError(_ error: Error) {
+        delegate?.transactionListVC(self, shouldShowError: error)
     }
 }
 

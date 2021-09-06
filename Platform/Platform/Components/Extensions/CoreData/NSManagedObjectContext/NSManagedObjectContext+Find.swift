@@ -5,9 +5,8 @@
 //  Created by Artem Shkirta on 05.09.2021.
 //
 
-import Foundation
-
 import CoreData
+import enum Domain.DatabaseError
 
 extension NSManagedObjectContext {
     public enum Function: String {

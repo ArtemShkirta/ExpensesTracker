@@ -13,4 +13,6 @@
 
 // MARK: - Expenses
 "expenses.button.add" = "Add";
+"expenses.textField.price.placeholder" = "Price";
+"expenses.textField.sort.placeholder" = "Sort";
 

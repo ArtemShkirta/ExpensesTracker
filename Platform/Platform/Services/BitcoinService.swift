@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import enum Domain.NetworkError
 
 final class BitcoinService {
     

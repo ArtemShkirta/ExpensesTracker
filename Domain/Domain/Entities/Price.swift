@@ -12,7 +12,7 @@ public struct Price {
     public let currency: Currency
     
     // MARK: - Life Cycle
-    public init(value: Decimal, currency: Currency) {
+    public init(value: Decimal, currency: Currency = .bitcoin) {
         self.value = value
         self.currency = currency
     }

@@ -6,13 +6,14 @@
 //
 
 import UIKit
-import class Domain.Expenses
 
 protocol ExpensesViewDelegate: AnyObject {
     func expensesView(_ view: ExpensesView, didTapAddButton button: UIButton)
 }
 
 final class ExpensesView: UIView {
+    
+    typealias Delegate = ExpensesViewDelegate & UIPickerViewDelegate & UIPickerViewDataSource
     
     private enum C {
         enum Insets {
@@ -25,13 +26,23 @@ final class ExpensesView: UIView {
         }
     }
     
+    // MARK: - Public Properties
+    var prise: Decimal? {
+        priceTextField.text.flatMap { Double($0) }.flatMap { Decimal($0) }
+    }
+    
+    var sort: String? {
+        sortTextField.text
+    }
+    
     // MARK: - Private Properties
-    private weak var delegate: ExpensesViewDelegate?
+    private weak var delegate: Delegate?
     
     private let priceTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
         textField.keyboardType = .decimalPad
+        textField.placeholder = Localized("expenses.textField.price.placeholder")
         return textField
     }()
     
@@ -39,6 +50,8 @@ final class ExpensesView: UIView {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
         textField.inputView = pickerView
+        textField.tintColor = .clear
+        textField.placeholder = Localized("expenses.textField.sort.placeholder")
         return textField
     }()
     
@@ -51,17 +64,17 @@ final class ExpensesView: UIView {
         return button
     }()
     
-    private lazy var pickerView: UIPickerView = {
+    private let pickerView: UIPickerView = {
         let picker = UIPickerView()
-        picker.dataSource = self
-        picker.delegate = self
         return picker
     }()
     
     // MARK: - Life Cycle
-    init(delegate: ExpensesViewDelegate, frame: CGRect) {
+    init(delegate: Delegate, frame: CGRect) {
         super.init(frame: frame)
         self.delegate = delegate
+        pickerView.dataSource = delegate
+        pickerView.delegate = delegate
         setupSubviews()
     }
     
@@ -93,26 +106,9 @@ final class ExpensesView: UIView {
                                  addExpensesButton.widthAnchor.constraint(equalToConstant: C.Size.addExpensesButton.width),
                                  addExpensesButton.heightAnchor.constraint(equalToConstant: C.Size.addExpensesButton.height)])
     }
-}
-
-// MARK: - UIPickerViewDataSource
-extension ExpensesView: UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        1
-    }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        Expenses.Sort.allCases.count
-    }
-}
-
-// MARK: - UIPickerViewDelegate
-extension ExpensesView: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        Expenses.Sort.allCases[row].name
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        sortTextField.text = Expenses.Sort.allCases[row].name
+    // MARK: - Update
+    func updateSort(_ newSort: String) {
+        sortTextField.text = newSort
     }
 }

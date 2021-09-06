@@ -46,11 +46,21 @@ extension TransactionCoordinator: TransactionListVCDelegate {
         let expensesVC = factory.makeExpensesVC(delegate: self)
         presenter.pushViewController(expensesVC, animated: true)
     }
+    
+    func transactionListVC(_ controller: TransactionListVC, shouldShowError error: Error) {
+        let alertVC = factory.makeErrorAlertVC(error: error)
+        controller.present(alertVC, animated: true)
+    }
 }
 
 // MARK: - ExpensesVCDelegate
 extension TransactionCoordinator: ExpensesVCDelegate {
     func expensesVC(_ controller: ExpensesVC, didTapAddButton button: UIButton) {
         presenter.popViewController(animated: true)
+    }
+    
+    func expensesVC(_ controller: ExpensesVC, shouldShowError error: Error) {
+        let alertVC = factory.makeErrorAlertVC(error: error)
+        controller.present(alertVC, animated: true)
     }
 }

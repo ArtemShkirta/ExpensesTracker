@@ -8,7 +8,7 @@
 public final class Income: Transaction {
     
     // MARK: - Life Cycle
-    public init(createDate: Date, price: Price) {
+    public init(price: Price, createDate: Date = Date()) {
         super.init(createDate: createDate, price: price, kind: .income)
     }
 }

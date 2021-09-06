@@ -29,7 +29,7 @@ extension Income: Persistable {
 // MARK: - DatabaseRepresentable
 extension Income: DatabaseRepresentable {
     public convenience init(_ object: CDTransaction) throws {
-        self.init(createDate: object.createDate,
-                  price: Price(value: object.price.decimalValue, currency: Currency(id: object.currency)))
+        self.init(price: Price(value: object.price.decimalValue, currency: Currency(id: object.currency)),
+                  createDate: object.createDate)
     }
 }

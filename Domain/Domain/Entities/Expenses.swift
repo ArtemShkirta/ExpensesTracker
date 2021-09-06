@@ -26,13 +26,20 @@ public final class Expenses: Transaction {
             }
             return name
         }
+        
+        public init?(name: String) {
+            guard let sort = Sort.allCases.first(where: { $0.name == name }) else {
+                return nil
+            }
+            self = sort
+        }
     }
     
     // MARK: - Properties
     public var sort: Sort
     
     // MARK: - Life Cycle
-    public init(createDate: Date, price: Price, sort: Sort) {
+    public init(price: Price, sort: Sort, createDate: Date = Date()) {
         self.sort = sort
         super.init(createDate: createDate, price: price, kind: .expenses)
     }

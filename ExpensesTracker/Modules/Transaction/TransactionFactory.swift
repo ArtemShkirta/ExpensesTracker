@@ -10,7 +10,10 @@ import UIKit
 protocol TransactionFactoryProtocol {
     func makeTransactionListVC(delegate: TransactionListVCDelegate) -> TransactionListVC
     func makeExpensesVC(delegate: ExpensesVCDelegate) -> ExpensesVC
-    func makeTopUpBalanceAlert(delegate: UITextFieldDelegate, okayHandler: ((String) -> Void)?, cancelHandler: (() -> Void)?) -> UIAlertController
+    func makeErrorAlertVC(error: Error) -> UIAlertController
+    func makeTopUpBalanceAlert(delegate: UITextFieldDelegate,
+                               okayHandler: ((String) -> Void)?,
+                               cancelHandler: (() -> Void)?) -> UIAlertController
 }
 
 final class TransactionFactory: ModuleFactory, TransactionFactoryProtocol {
@@ -40,5 +43,11 @@ final class TransactionFactory: ModuleFactory, TransactionFactoryProtocol {
         })
         controller.addAction(.cancel { _ in cancelHandler?() })
         return controller
+    }
+    
+    func makeErrorAlertVC(error: Error) -> UIAlertController {
+        let alert = UIAlertController(title: LocalizedAlert("title.error"), message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(.okay())
+        return alert
     }
 }

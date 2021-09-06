@@ -41,7 +41,7 @@ final class TransactionService: TransactionUseCase {
         }
         database.find(.sum, of: \CDTransaction.price) { [weak self] result in
             self?.currentBalance = try? result.get().decimalValue
-            completion(result.mapError { _ in AppError.database }.map { $0.decimalValue })
+            completion(result.mapError(\.asAppError).map { $0.decimalValue })
         }
     }
     
@@ -69,10 +69,9 @@ final class TransactionService: TransactionUseCase {
                 self?.currentBalance = balance + value.price.value
                 self?.observers[.balanceUpdated]?.forEach { $0.domain(didPerform: .balanceUpdated) }
                 completion(.success(value))
-            case .failure:
-                completion(.failure(.database))
+            case .failure(let error):
+                completion(.failure(error.asAppError))
             }
-            completion(result.mapError { _ in AppError.database })
         }
     }
     

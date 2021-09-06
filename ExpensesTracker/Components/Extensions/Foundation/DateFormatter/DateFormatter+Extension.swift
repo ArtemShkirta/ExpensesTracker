@@ -11,7 +11,7 @@ extension DateFormatter {
     
     static var transaction: DateFormatter {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy"
+        formatter.dateFormat = "HH:mm dd.MM.yyyy"
         formatter.locale = .current
         formatter.timeZone = .current
         return formatter

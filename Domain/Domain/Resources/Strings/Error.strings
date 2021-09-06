@@ -1,0 +1,17 @@
+/* 
+  Error.strings
+  Domain
+
+  Created by Artem Shkirta on 06.09.2021.
+  
+*/
+
+// MARK: - Validation Error
+"validation.expenses.price.empty" = "Price can't be empty";
+"validation.expenses.sort.empty" = "Expenses type can't be empty";
+
+// MARK: - Database Error
+"database.cantExecute" = "Internal error. Try again later!";
+
+// MARK: - Database Error
+"network.internal" = "Internal error. Try again later!";
