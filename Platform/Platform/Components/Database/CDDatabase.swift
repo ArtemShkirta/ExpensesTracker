@@ -59,6 +59,14 @@ public final class CDDatabase {
     
     // MARK: - Helper Methods
     @objc private func handleDidSaveNotification(_ notification: Notification) {
+        guard let savedContext = notification.object as? NSManagedObjectContext else { return }
+        
+        // ignore change notifications for the main MOC
+        guard savedContext != mainContext else  { return }
+        
+        // that's another database
+        guard savedContext.persistentStoreCoordinator != mainContext.persistentStoreCoordinator else { return }
+        
         mainContext.mergeChanges(fromContextDidSave: notification)
     }
 }
